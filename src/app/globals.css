@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-geist-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -127,4 +127,218 @@
   html {
     @apply font-sans;
   }
+}
+
+.style-scope {
+  color: var(--fg-primary);
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-body);
+  letter-spacing: var(--tracking-body);
+  background-color: var(--bg-canvas);
+  background-position: center;
+  line-height: 1.45;
+}
+
+.style-scope .ds-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-inline);
+  min-height: var(--size-control);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  border-radius: var(--button-radius);
+  border-style: solid;
+  border-width: var(--button-border-width);
+  box-shadow: var(--button-shadow);
+  font-family: var(--button-font);
+  font-size: var(--button-size);
+  font-weight: var(--button-weight);
+  letter-spacing: var(--tracking-body);
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-interaction) var(--ease-interaction),
+    transform var(--duration-interaction) var(--ease-interaction),
+    box-shadow var(--duration-interaction) var(--ease-interaction);
+}
+
+.style-scope .ds-btn:focus-visible {
+  outline: 2px solid var(--input-focus);
+  outline-offset: 2px;
+}
+
+.style-scope .ds-btn-primary {
+  background: var(--button-bg);
+  color: var(--button-fg);
+  border-color: var(--button-border);
+}
+
+.style-scope .ds-btn-primary:hover:not(:disabled) {
+  background: var(--button-bg-hover);
+}
+
+.style-scope .ds-btn-secondary {
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-fg);
+  border-color: var(--button-secondary-border);
+}
+
+.style-scope .ds-btn:disabled {
+  background: var(--button-disabled-bg);
+  color: var(--button-disabled-fg);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.style-scope .ds-input,
+.style-scope .ds-search {
+  width: 100%;
+  height: var(--input-height);
+  border-radius: var(--input-radius);
+  border-style: solid;
+  border-width: var(--input-border-width);
+  border-color: var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-fg);
+  font-family: var(--input-font);
+  font-size: var(--input-size);
+  letter-spacing: var(--tracking-body);
+  box-shadow: var(--shadow-subtle);
+  outline: none;
+}
+
+.style-scope .ds-input {
+  padding: 0 var(--input-padding-x);
+}
+
+.style-scope .ds-input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.style-scope .ds-input:focus-visible,
+.style-scope .ds-search:focus-within {
+  outline: 2px solid var(--input-focus);
+  outline-offset: 2px;
+}
+
+.style-scope .ds-search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline);
+  padding: 0 var(--space-inline) 0 var(--input-padding-x);
+  color: var(--input-placeholder);
+}
+
+.style-scope .ds-card {
+  background: var(--card-bg);
+  color: var(--card-fg);
+  border-style: solid;
+  border-width: var(--card-border-width);
+  border-color: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding);
+  backdrop-filter: blur(var(--card-blur));
+}
+
+.style-scope .ds-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1em var(--badge-padding-x);
+  border-radius: var(--badge-radius);
+  background: var(--badge-bg);
+  color: var(--badge-fg);
+  border-style: solid;
+  border-width: var(--badge-border-width);
+  border-color: var(--badge-border);
+  font-family: var(--badge-font);
+  font-size: var(--badge-size);
+  font-weight: var(--weight-emphasis);
+  line-height: 1.5;
+}
+
+.style-scope .ds-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inline);
+  min-height: var(--nav-height);
+  padding: var(--space-inline) var(--nav-padding-x);
+  background: var(--nav-bg);
+  color: var(--nav-fg);
+  border-bottom: var(--border-width-divider) solid var(--nav-border);
+  font-family: var(--nav-font);
+}
+
+.style-scope .ds-tabbar {
+  display: flex;
+  align-items: stretch;
+  min-height: var(--tabbar-height);
+  background: var(--tabbar-bg);
+  color: var(--tabbar-fg);
+  border-top: var(--border-width-divider) solid var(--tabbar-border);
+  font-family: var(--tabbar-font);
+  font-size: var(--text-caption);
+}
+
+.style-scope .ds-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  min-height: var(--size-control);
+  color: var(--tabbar-fg);
+}
+
+.style-scope .ds-tab[data-active="true"] {
+  color: var(--tabbar-active);
+}
+
+.style-scope .ds-list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-inline);
+  min-height: var(--size-control);
+  padding: var(--list-padding-y) var(--list-padding-x);
+  background: var(--list-bg);
+  color: var(--list-fg);
+  border-bottom: var(--list-border-width) solid var(--list-divider);
+}
+
+.style-scope .ds-list-row:last-child {
+  border-bottom: 0;
+}
+
+.style-scope .ds-dialog {
+  background: var(--dialog-bg);
+  color: var(--dialog-fg);
+  border-radius: var(--dialog-radius);
+  border: var(--dialog-border-width) solid var(--dialog-border);
+  box-shadow: var(--dialog-shadow);
+  padding: var(--dialog-padding);
+}
+
+.style-scope .ds-display,
+.style-scope .ds-title {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-emphasis);
+  letter-spacing: var(--tracking-body);
+  line-height: 1.12;
+}
+
+.style-scope .ds-display {
+  font-size: var(--text-display);
+}
+
+.style-scope .ds-title {
+  font-size: var(--text-title);
+}
+
+.style-scope .ds-muted {
+  color: var(--fg-muted);
+  font-size: var(--text-caption);
 }
