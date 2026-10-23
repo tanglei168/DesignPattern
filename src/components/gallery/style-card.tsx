@@ -1,16 +1,23 @@
 import { MiniPreview } from "@/components/preview/mini-preview";
 import { Badge } from "@/components/ui/badge";
-import type { StyleSeed } from "@/lib/styles/types";
+import type { Platform, StyleSeed } from "@/lib/styles/types";
 import Link from "next/link";
 
-export function StyleCard({ style }: { style: StyleSeed }) {
+export function StyleCard({
+  style,
+  previewMode = "web",
+}: {
+  style: StyleSeed;
+  previewMode?: Platform | "all";
+}) {
   return (
     <Link
       href={`/styles/${style.id}`}
+      data-slot="style-card"
       className="group flex flex-col overflow-hidden rounded-xl border bg-card shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
     >
       <div className="border-b bg-muted/30">
-        <MiniPreview seed={style} />
+        <MiniPreview seed={style} mode={previewMode === "all" ? "web" : previewMode} />
       </div>
       <div className="flex items-start justify-between gap-3 p-3">
         <div className="min-w-0">

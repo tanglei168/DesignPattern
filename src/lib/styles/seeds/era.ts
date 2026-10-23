@@ -358,7 +358,7 @@ export const eraSeeds: StyleSeed[] = [
     name: "杂志排版",
     nameEn: "Magazine Layout",
     category: "era",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "衬线", "编辑", "内容"],
     summary:
       "杂志排版把页面当成跨页：超大标题、窄栏正文、图片可以出血。界面控件退到后面，阅读顺序由字号和分栏决定。",
@@ -421,7 +421,7 @@ export const eraSeeds: StyleSeed[] = [
     name: "报纸排版",
     nameEn: "Newspaper",
     category: "era",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "衬线", "编辑", "直角"],
     summary:
       "报纸排版比杂志更密、更黑白、更依赖栏和规则线。报头、日期和分栏规则建立信任，装饰几乎不存在。",

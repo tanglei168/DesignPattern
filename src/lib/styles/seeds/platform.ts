@@ -275,7 +275,7 @@ export const platformSeeds: StyleSeed[] = [
     name: "IBM Carbon",
     nameEn: "IBM Carbon",
     category: "platform",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["系统", "浅色", "企业", "直角"],
     summary:
       "Carbon 是 IBM 的生产型设计系统：直角、2px 网格的严谨排版、蓝 60 作为唯一行动色。界面像仪器，不讨好，但极好扫描。",
@@ -342,7 +342,7 @@ export const platformSeeds: StyleSeed[] = [
     name: "Vercel Geist",
     nameEn: "Vercel Geist",
     category: "platform",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["系统", "浅色", "开发者", "直角"],
     summary:
       "Geist 是 Vercel 的产品界面：近黑文字、几乎无彩的表面、极细边框和短阴影。开发者工具要安静，让部署状态和代码自己说话。",
@@ -409,7 +409,7 @@ export const platformSeeds: StyleSeed[] = [
     name: "微信 WeUI",
     nameEn: "WeChat WeUI",
     category: "platform",
-    platforms: ["mobile", "web"],
+    platforms: ["mobile"],
     tags: ["系统", "浅色", "触控", "微信"],
     summary:
       "WeUI 是微信内的界面习惯：浅灰底、白单元格、微信绿只给确认。结构是列表和操作表，不是卡片墙。",
@@ -476,7 +476,7 @@ export const platformSeeds: StyleSeed[] = [
     name: "HarmonyOS",
     nameEn: "HarmonyOS Design",
     category: "platform",
-    platforms: ["web", "mobile"],
+    platforms: ["mobile"],
     tags: ["系统", "浅色", "圆角", "触控"],
     summary:
       "HarmonyOS 设计强调一体感：大圆角、轻盈的蓝、分组卡片和跨设备时仍能一眼认出的控件比例。触控友好，但视觉保持轻。",

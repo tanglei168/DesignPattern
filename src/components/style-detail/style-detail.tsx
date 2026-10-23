@@ -204,18 +204,7 @@ export function StyleDetail({
 
           <section id="preview" className="scroll-mt-32">
             <SectionTitle title="预览" kicker="Preview" />
-            <Tabs defaultValue="web">
-              <TabsList>
-                <TabsTrigger value="web">Web</TabsTrigger>
-                <TabsTrigger value="mobile">移动端</TabsTrigger>
-              </TabsList>
-              <TabsContent value="web" className="pt-4">
-                <WebMockup seed={seed} />
-              </TabsContent>
-              <TabsContent value="mobile" className="pt-4">
-                <MobileMockup seed={seed} />
-              </TabsContent>
-            </Tabs>
+            <PreviewPlatformTabs seed={seed} />
           </section>
 
           <section id="color" className="scroll-mt-32">
@@ -372,6 +361,25 @@ export function StyleDetail({
         </div>
       </main>
     </div>
+  );
+}
+
+function PreviewPlatformTabs({ seed }: { seed: StyleSeed }) {
+  const [platform, setPlatform] = useState<"web" | "mobile">("web");
+
+  return (
+    <Tabs value={platform} onValueChange={(value) => setPlatform(value === "mobile" ? "mobile" : "web")}>
+      <TabsList>
+        <TabsTrigger value="web">Web</TabsTrigger>
+        <TabsTrigger value="mobile">移动端</TabsTrigger>
+      </TabsList>
+      <TabsContent value="web" className="pt-4">
+        <WebMockup seed={seed} />
+      </TabsContent>
+      <TabsContent value="mobile" className="pt-4">
+        <MobileMockup seed={seed} />
+      </TabsContent>
+    </Tabs>
   );
 }
 

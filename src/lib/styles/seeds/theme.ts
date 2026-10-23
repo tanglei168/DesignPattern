@@ -275,7 +275,7 @@ export const themeSeeds: StyleSeed[] = [
     name: "Solarized",
     nameEn: "Solarized Light",
     category: "theme",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "终端", "低饱和"],
     summary:
       "Solarized Light 用暖纸色和降低过的对比来减轻眩光。它不是普通白底，强调色是蓝和青，黄色只做谨慎的高亮。",

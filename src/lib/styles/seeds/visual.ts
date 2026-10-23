@@ -273,7 +273,7 @@ export const visualSeeds: StyleSeed[] = [
     name: "黏土拟态",
     nameEn: "Claymorphism",
     category: "visual",
-    platforms: ["web", "mobile"],
+    platforms: ["mobile"],
     tags: ["浅色", "圆角", "活泼"],
     summary:
       "黏土拟态把界面捏成柔软的彩泥：超大圆角、内高光加外侧厚实的色块阴影。它亲切，适合轻任务，不适合严肃数据。",
@@ -340,7 +340,7 @@ export const visualSeeds: StyleSeed[] = [
     name: "拟物",
     nameEn: "Skeuomorphism",
     category: "visual",
-    platforms: ["web", "mobile"],
+    platforms: ["mobile"],
     tags: ["浅色", "拟物", "质感"],
     summary:
       "拟物借用真实材料：纸张、金属和缝线。用户靠生活经验理解按钮会被按下、旋钮可以转。材料要服务操作，而不是做成博物馆。",
@@ -411,7 +411,7 @@ export const visualSeeds: StyleSeed[] = [
     name: "粗野主义",
     nameEn: "Brutalism",
     category: "visual",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "高对比", "直角", "实验"],
     summary:
       "粗野主义把结构裸露出来：直角、黑边、系统字体或超粗标题、几乎无礼的对比。它适合态度鲜明的内容，不适合需要被安慰的流程。",
@@ -609,7 +609,7 @@ export const visualSeeds: StyleSeed[] = [
     name: "便当网格",
     nameEn: "Bento Grid",
     category: "visual",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "网格", "圆角", "内容"],
     summary:
       "便当网格把不同权重的信息装进同一套大圆角格子里。格子大小可以不同，间距、圆角和内边距必须相同，看起来才像一盒而不是一堆卡片。",

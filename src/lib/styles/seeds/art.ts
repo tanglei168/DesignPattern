@@ -7,7 +7,7 @@ export const artSeeds: StyleSeed[] = [
     name: "瑞士国际主义",
     nameEn: "Swiss International",
     category: "art",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "网格", "直角", "高对比"],
     summary:
       "瑞士国际主义把界面当成网格上的信息：无衬线、左对齐、非对称留白，红色只作为定位记号。秩序本身就是风格。",
@@ -70,7 +70,7 @@ export const artSeeds: StyleSeed[] = [
     name: "包豪斯",
     nameEn: "Bauhaus",
     category: "art",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "几何", "直角", "高对比"],
     summary:
       "包豪斯把基本形当成界面零件：方、圆、三角，红黄蓝三原色加黑白。形式跟随功能，几何不是贴纸而是结构。",
@@ -272,7 +272,7 @@ export const artSeeds: StyleSeed[] = [
     name: "装饰艺术",
     nameEn: "Art Deco",
     category: "art",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["深色", "奢华", "衬线", "几何"],
     summary:
       "装饰艺术是对称、金属线和阶梯状几何。金色是镶边不是填充洪水，衬线标题拉开字距，像门厅而不是传单。",
@@ -339,7 +339,7 @@ export const artSeeds: StyleSeed[] = [
     name: "新艺术运动",
     nameEn: "Art Nouveau",
     category: "art",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "衬线", "有机", "圆角"],
     summary:
       "新艺术用植物曲线、不对称藤蔓和温暖的纸色。曲线装饰边框和标题，阅读区域保持平静，避免把正文也扭弯。",
@@ -406,7 +406,7 @@ export const artSeeds: StyleSeed[] = [
     name: "构成主义",
     nameEn: "Constructivism",
     category: "art",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "高对比", "直角", "几何"],
     summary:
       "构成主义用斜线、红黑和超大字体把界面当成海报。对角线制造运动，文字本身就是图形，功能不能被斜角藏起来。",
@@ -473,7 +473,7 @@ export const artSeeds: StyleSeed[] = [
     name: "风格派",
     nameEn: "De Stijl",
     category: "art",
-    platforms: ["web", "mobile"],
+    platforms: ["web"],
     tags: ["浅色", "几何", "直角", "高对比"],
     summary:
       "风格派只承认水平线、垂直线和三原色。界面像蒙德里安的格子变成可点击的区域：不对称，但每条线都贯通。",
