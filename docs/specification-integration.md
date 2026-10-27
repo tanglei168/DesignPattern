@@ -40,4 +40,4 @@
 - TypeScript 类型检查、45项测试、修改模块 ESLint。
 - 浏览器检查首页组合筛选、规范库加载和移动规则检索；390px宽度检查规范库布局。
 - 不包含所有风格、所有辅助技术与原生端的完整验收。
-- 生产构建尝试被现有 next/font/google 的 Geist、Geist Mono 在线下载阻断（无法访问 fonts.googleapis.com）；未声明构建通过。
+- 应用壳字体已改为本地 `geist` 包（`next/font/local`），生产构建不再依赖 Google Fonts 下载 Geist。风格预览用的 Google Fonts 仍为运行时 `<link>`，断网时回退到系统字体栈。
