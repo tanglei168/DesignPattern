@@ -1,7 +1,7 @@
-import { isExportFile, renderExport } from "@/lib/export/files";
+import { EXPORT_FILES, isExportFile, renderExport } from "@/lib/export/files";
 import { getStyle, STYLES } from "@/lib/styles";
 
-const FILES = ["tokens.css", "tokens.json", "tailwind.theme.css", "DESIGN.md", "design-style.mdc"] as const;
+const FILES = EXPORT_FILES.map(item => item.file);
 
 export function generateStaticParams() {
   return STYLES.flatMap((style) => FILES.map((file) => ({ id: style.id, file })));
@@ -35,3 +35,4 @@ export async function GET(
     },
   });
 }
+

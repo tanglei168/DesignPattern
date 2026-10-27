@@ -25,7 +25,8 @@ export function CategoryNav({
   onSelect: (category: string) => void;
 }) {
   return (
-    <nav aria-label="风格分类" className="flex flex-col gap-1 p-3">
+    <nav aria-label="设计类型" className="flex flex-col gap-1 p-3">
+      <p className="px-2.5 py-2 text-xs font-medium text-muted-foreground">设计类型 / Design Type</p>
       <CategoryButton active={active === ""} count={total} label="全部" labelEn="All" onClick={() => onSelect("")} />
       {CATEGORIES.map((category) => {
         const Icon = ICONS[category.icon];
@@ -81,3 +82,4 @@ function CategoryButton({
     </button>
   );
 }
+

@@ -80,6 +80,7 @@ export function toAgentsSnippet(seed: StyleSeed): string {
 
 本项目界面遵循「${seed.name}」（${seed.nameEn}）。
 
+- 详细规则、平台差异与验收方法见 \`design/SPECIFICATION.md\`，规则定义不代表已实现或已验收。
 - 改 UI 之前先阅读 \`design/DESIGN.md\`。
 - 全局引入 \`design/tokens.css\`。颜色、圆角、阴影、字号、字重和间距只能使用其中的 CSS 变量，禁止硬编码。
 - 遵守 DESIGN.md 的 MUST 与 MUST NOT。

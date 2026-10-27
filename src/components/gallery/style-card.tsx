@@ -1,3 +1,4 @@
+import { previewAppearance, industriesForStyle, INDUSTRIES } from "@/lib/styles/discovery";
 import { MiniPreview } from "@/components/preview/mini-preview";
 import { Badge } from "@/components/ui/badge";
 import type { Platform, StyleSeed } from "@/lib/styles/types";
@@ -29,6 +30,8 @@ export function StyleCard({
         </span>
       </div>
       <div className="flex flex-wrap gap-1 px-3 pb-3">
+        <Badge variant="outline">{previewAppearance(style) === "dark" ? "深色预览" : "浅色预览"}</Badge>
+        {industriesForStyle(style.id).slice(0, 2).map(id => <Badge key={id} variant="secondary">{INDUSTRIES.find(([key]) => key === id)?.[1]}</Badge> )}
         {style.platforms.map((platform) => (
           <Badge key={platform} variant="outline">
             {platform === "web" ? "Web" : "移动端"}
@@ -38,3 +41,4 @@ export function StyleCard({
     </Link>
   );
 }
+

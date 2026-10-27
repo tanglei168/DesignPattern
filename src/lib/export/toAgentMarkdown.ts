@@ -1,3 +1,4 @@
+import { specificationMarkdown } from "@/lib/styles/specification";
 import { markdownCell, tokenTable } from "@/lib/export/format";
 import { contrastRatio, wcagLevel } from "@/lib/color";
 import { getCategory } from "@/lib/styles/categories";
@@ -65,6 +66,8 @@ ${seed.donts.map((item) => `- ${item}`).join("\n")}
 ## 适用场景
 
 ${seed.useCases.map((item) => `- ${item}`).join("\n")}
+
+${specificationMarkdown(seed).replace(/^(#{1,3}) /gm, "$1# ")}
 
 ## Token
 

@@ -10,6 +10,7 @@ export function kitFilename(seed: StyleSeed): string {
 
 export async function buildZip(seed: StyleSeed): Promise<Blob> {
   const zip = new JSZip();
+  zip.file("design/SPECIFICATION.md", renderExportContent(seed, "SPECIFICATION.md"));
   zip.file("design/tokens.css", renderExportContent(seed, "tokens.css"));
   zip.file("design/tokens.json", renderExportContent(seed, "tokens.json"));
   zip.file("design/tailwind.theme.css", renderExportContent(seed, "tailwind.theme.css"));

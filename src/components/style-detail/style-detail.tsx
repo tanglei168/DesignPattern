@@ -1,5 +1,7 @@
 "use client";
 
+import { SpecificationPanel } from "@/components/style-detail/specification-panel";
+import { EnterpriseComponents } from "@/components/preview/enterprise-components";
 import { MobileMockup } from "@/components/preview/mobile-mockup";
 import { StyleScope } from "@/components/preview/style-scope";
 import { WebMockup } from "@/components/preview/web-mockup";
@@ -22,6 +24,7 @@ import { toast } from "sonner";
 
 const SECTIONS = [
   { id: "overview", label: "概览" },
+  { id: "specification", label: "详细规范" },
   { id: "preview", label: "预览" },
   { id: "color", label: "色彩" },
   { id: "type", label: "字体" },
@@ -207,6 +210,11 @@ export function StyleDetail({
             </div>
           </section>
 
+          <section id="specification" className="scroll-mt-32">
+            <SectionTitle title="详细设计规范" kicker="Specification" />
+            <SpecificationPanel key={seed.id} seed={seed} />
+          </section>
+
           <section id="preview" className="scroll-mt-32">
             <SectionTitle title="预览" kicker="Preview" />
             <p className="mb-4 text-sm text-muted-foreground">这是风格启发的组件试样，不是官方组件库或完整产品复刻。艺术流派与布局风格的构图特征未完整实现；色彩对比检测也不等于整页无障碍认证。</p>
@@ -331,6 +339,7 @@ export function StyleDetail({
 
           <section id="components" className="scroll-mt-32">
             <SectionTitle title="组件" kicker="Components" />
+            {seed.id === "shigan-b" ? <EnterpriseComponents seed={seed} /> : (
             <StyleScope seed={seed} className="rounded-xl border">
               <div style={{ display: "grid", gap: "var(--space-stack)", padding: "var(--space-container)" }}>
                 <div className="flex flex-wrap" style={{ gap: "var(--space-inline)" }}>
@@ -355,6 +364,7 @@ export function StyleDetail({
                 </div>
               </div>
             </StyleScope>
+            )}
           </section>
 
           <section id="tokens" className="scroll-mt-32">

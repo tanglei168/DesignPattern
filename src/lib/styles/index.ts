@@ -1,3 +1,4 @@
+import { INDUSTRIES, industriesForStyle, previewAppearance } from "@/lib/styles/discovery";
 import { shiganSeed } from "@/lib/styles/seeds/shigan";
 import { CATEGORIES, getCategory } from "@/lib/styles/categories";
 import { artSeeds } from "@/lib/styles/seeds/art";
@@ -51,6 +52,8 @@ export function getStylesByCategory(category: CategoryId): StyleSeed[] {
 }
 
 export type StyleQuery = {
+  industry?: string;
+  mode?: string;
   q?: string;
   cat?: string;
   platform?: string;
@@ -63,6 +66,8 @@ export function filterStyles(styles: StyleSeed[], query: StyleQuery): StyleSeed[
   const category = CATEGORIES.some((item) => item.id === query.cat) ? (query.cat as CategoryId) : "";
 
   return styles.filter((style) => {
+    if (query.industry && INDUSTRIES.some(([id]) => id === query.industry) && !industriesForStyle(style.id).some(id => id === query.industry)) return false;
+    if ((query.mode === "light" || query.mode === "dark") && previewAppearance(style) !== query.mode) return false;
     if (category && style.category !== category) return false;
     if (platform && !style.platforms.includes(platform as Platform)) return false;
     if (query.tag && !style.tags.includes(query.tag)) return false;

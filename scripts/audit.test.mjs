@@ -9,6 +9,10 @@ import { contrastRatio, opaqueColor } from '@/lib/color';
 import { shiganSource, sourceValue } from '@/lib/styles/shigan';
 import { effectStyles } from '@/lib/styles/effects';
 import { dtcgDimension, parseShadow } from '@/lib/export/format';
+import { getDesignSpec, specificationMarkdown, appleReferenceIndex, SPEC_SECTIONS } from '@/lib/styles/specification';
+import { INDUSTRIES, industriesForStyle, previewAppearance } from '@/lib/styles/discovery';
+import { buildZip } from '@/lib/export/buildZip';
+import JSZip from 'jszip';
 const flatten = (obj, path=[], out=new Map())=> {
   for(const [key,value] of Object.entries(obj)) {
     if(key.startsWith('$')) continue;
@@ -63,4 +67,38 @@ test('regressions: shadows, dimensions, contrast, platform sizing',()=>{
   assert.equal(valueOf(getStyle('material-3'),'--size-control'),'48px');
   assert.equal(valueOf(getStyle('ibm-carbon'),'--size-control'),'32px');
   assert.equal(STYLES.length,41);
+});
+
+test('scenario, appearance and platform filters intersect without losing design type', () => {
+  for (const [industry] of INDUSTRIES) {
+    const matches = filterStyles(STYLES, { industry });
+    assert(matches.length > 0, industry);
+    assert(matches.every(seed => industriesForStyle(seed.id).includes(industry)));
+    for (const platform of ['web', 'mobile']) for (const mode of ['light', 'dark']) {
+      const intersection = filterStyles(STYLES, { industry, platform, mode });
+      assert(intersection.every(seed => matches.includes(seed) && seed.platforms.includes(platform) && previewAppearance(seed) === mode));
+    }
+  }
+  assert.deepEqual(filterStyles(STYLES, { industry:'saas', cat:'product', platform:'web', mode:'light' }).map(s=>s.id), ['shigan-b']);
+  assert.equal(filterStyles(STYLES, { industry:'unknown', mode:'unknown' }).length, STYLES.length);
+});
+
+test('specification completeness, provenance and export parity', async () => {
+  assert.equal(appleReferenceIndex.entries.length, 123);
+  assert.equal(new Set(appleReferenceIndex.entries.map(r=>r.file)).size, 123);
+  for (const seed of STYLES) {
+    const spec = getDesignSpec(seed);
+    assert.equal(new Set(spec.rules.map(r=>r.id)).size, spec.rules.length);
+    for (const section of SPEC_SECTIONS) assert(spec.rules.some(r=>r.section===section));
+    for (const rule of spec.rules) for (const key of ['purpose','anatomy','web','mobile','states','avoid','acceptance','basis']) assert(rule[key].length > 5, `${seed.id}/${rule.id}/${key}`);
+    const exported = renderExport(seed, 'SPECIFICATION.md').content;
+    assert.equal(exported, specificationMarkdown(seed));
+    assert(exported.includes('实现与人工验收未在此记录'));
+    assert(renderExport(seed, 'DESIGN.md').content.includes(spec.rules.at(-1).acceptance));
+  }
+  assert(getDesignSpec(getStyle('apple-hig')).rules.some(r=>r.id==='apple-sheets' && r.source.includes(appleReferenceIndex.revision)));
+  assert(getDesignSpec(getStyle('shigan-b')).rules.some(r=>r.id==='enterprise-controls' && r.web!==r.mobile));
+  const blob=await buildZip(getStyle('shigan-b'));
+  const zip=await JSZip.loadAsync(await blob.arrayBuffer());
+  assert.equal(await zip.file('design/SPECIFICATION.md').async('string'), specificationMarkdown(getStyle('shigan-b')));
 });
