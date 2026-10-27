@@ -1,0 +1,657 @@
+{
+  "$description": "实干家 B 端 token 初稿（基于截图，2026-10-27 修订：风险色/在线色/深色已决定）。primitive/semantic 全端共用，component 中带 -b 的为 B 端紧凑密度。",
+  "color": {
+    "yellow": {
+      "50": {
+        "$value": "#FFFAE6",
+        "$type": "color",
+        "$description": "推导"
+      },
+      "100": {
+        "$value": "#FFF3BF",
+        "$type": "color",
+        "$description": "推导"
+      },
+      "200": {
+        "$value": "#FFE99E",
+        "$type": "color",
+        "$description": "实测",
+        "$extensions": {
+          "shigan.source": [
+            "Web首页环形图 中风险",
+            "小程序图标浅色"
+          ]
+        }
+      },
+      "300": {
+        "$value": "#FFDD66",
+        "$type": "color",
+        "$description": "推导"
+      },
+      "400": {
+        "$value": "#F7C332",
+        "$type": "color",
+        "$description": "实测，建议并入500",
+        "$extensions": {
+          "shigan.source": [
+            "Web员工列表 导航选中",
+            "小程序首页 中风险数字",
+            "图表折线"
+          ]
+        }
+      },
+      "500": {
+        "$value": "#FFCC00",
+        "$type": "color",
+        "$description": "实测，品牌主色",
+        "$extensions": {
+          "shigan.source": [
+            "Web首页 分段/分页选中",
+            "Web详情 仪表盘",
+            "小程序图标 #FFCB13 近似"
+          ]
+        }
+      },
+      "600": {
+        "$value": "#E0B000",
+        "$type": "color",
+        "$description": "推导"
+      },
+      "700": {
+        "$value": "#B38A00",
+        "$type": "color",
+        "$description": "推导"
+      },
+      "800": {
+        "$value": "#806300",
+        "$type": "color",
+        "$description": "推导，黄色系唯一可做白底文字的档位 5.67:1"
+      },
+      "900": {
+        "$value": "#4D3B00",
+        "$type": "color",
+        "$description": "推导"
+      }
+    },
+    "neutral": {
+      "0": {
+        "$value": "#FFFFFF",
+        "$type": "color"
+      },
+      "50": {
+        "$value": "#F7F7F9",
+        "$type": "color",
+        "$description": "实测 报警列表行底"
+      },
+      "100": {
+        "$value": "#F3F4F7",
+        "$type": "color",
+        "$description": "实测 Web页面底/统计卡片底"
+      },
+      "150": {
+        "$value": "#F2F4FA",
+        "$type": "color",
+        "$description": "实测 小程序页面底，近似 #F0F2F8/#EDEEF3"
+      },
+      "200": {
+        "$value": "#EEEEEE",
+        "$type": "color",
+        "$description": "实测 已失效按钮底"
+      },
+      "300": {
+        "$value": "#DDDDDD",
+        "$type": "color",
+        "$description": "实测 表格分隔线/输入框描边"
+      },
+      "400": {
+        "$value": "#B1B1B3",
+        "$type": "color",
+        "$description": "实测 图表离线渐变"
+      },
+      "500": {
+        "$value": "#999999",
+        "$type": "color",
+        "$description": "实测 占位/标签文字，对比度不足"
+      },
+      "550": {
+        "$value": "#767676",
+        "$type": "color",
+        "$description": "推导，白底 4.54:1 的最浅文字色"
+      },
+      "600": {
+        "$value": "#666666",
+        "$type": "color",
+        "$description": "实测 次要文字/低风险/离线"
+      },
+      "700": {
+        "$value": "#3D3D3D",
+        "$type": "color",
+        "$description": "实测 小程序数字"
+      },
+      "800": {
+        "$value": "#333333",
+        "$type": "color",
+        "$description": "实测 Toast 底"
+      },
+      "900": {
+        "$value": "#000000",
+        "$type": "color",
+        "$description": "实测 主文字/Web顶栏"
+      }
+    },
+    "slate": {
+      "900": {
+        "$value": "#2B2A35",
+        "$type": "color",
+        "$description": "推导：#393847 混 25% 黑；仪表盘底"
+      },
+      "800": {
+        "$value": "#32313E",
+        "$type": "color",
+        "$description": "推导：混 12% 黑"
+      },
+      "700": {
+        "$value": "#393847",
+        "$type": "color",
+        "$description": "实测，全端深色基准：Web 顶栏/侧栏、小程序导航栏/tab bar"
+      },
+      "650": {
+        "$value": "#434250",
+        "$type": "color",
+        "$description": "推导：混 5% 白；侧栏 hover"
+      },
+      "600": {
+        "$value": "#4D4C59",
+        "$type": "color",
+        "$description": "推导：混 10% 白；侧栏选中、分隔线"
+      },
+      "400": {
+        "$value": "#888891",
+        "$type": "color",
+        "$description": "推导：混 40% 白；tab 未选中图标 3.27:1"
+      },
+      "300": {
+        "$value": "#B0AFB8",
+        "$type": "color",
+        "$description": "推导；深色上次要文字 5.28:1"
+      }
+    },
+    "blue": {
+      "500": {
+        "$value": "#006EFF",
+        "$type": "color",
+        "$description": "实测 链接/角标，白底 4.49:1，差一点达标"
+      },
+      "600": {
+        "$value": "#0062E6",
+        "$type": "color",
+        "$description": "推导，白底 5.4:1"
+      }
+    },
+    "red": {
+      "500": {
+        "$value": "#F5222D",
+        "$type": "color",
+        "$description": "实测 删除按钮/阈值线，白字 4.08:1"
+      },
+      "600": {
+        "$value": "#E42323",
+        "$type": "color",
+        "$description": "实测 小程序高风险/故障图标，白底 4.6:1"
+      },
+      "400": {
+        "$value": "#FF5C5C",
+        "$type": "color",
+        "$description": "推导；深色面上的危险色，#393847 上 3.79:1"
+      }
+    },
+    "green": {
+      "100": {
+        "$value": "#E3F9E9",
+        "$type": "color",
+        "$description": "实测 正常标签底"
+      },
+      "500": {
+        "$value": "#2BA471",
+        "$type": "color",
+        "$description": "实测 正常图标"
+      }
+    },
+    "cyan": {
+      "100": {
+        "$value": "#D9FFFD",
+        "$type": "color",
+        "$description": "实测 怠速时间，近似 #E3FFFE"
+      },
+      "500": {
+        "$value": "#00DEF5",
+        "$type": "color",
+        "$description": "实测 工作时间"
+      }
+    }
+  },
+  "semantic": {
+    "brand": {
+      "primary": {
+        "$value": "{color.yellow.500}",
+        "$type": "color"
+      },
+      "primary-subtle": {
+        "$value": "{color.yellow.200}",
+        "$type": "color"
+      },
+      "on-primary": {
+        "$value": "{color.neutral.900}",
+        "$type": "color",
+        "$description": "黄底只用黑字，白字仅 1.5:1"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{color.neutral.900}",
+        "$type": "color"
+      },
+      "secondary": {
+        "$value": "{color.neutral.600}",
+        "$type": "color"
+      },
+      "tertiary": {
+        "$value": "{color.neutral.550}",
+        "$type": "color"
+      },
+      "link": {
+        "$value": "{color.blue.600}",
+        "$type": "color"
+      },
+      "on-dark": {
+        "$value": "{color.neutral.0}",
+        "$type": "color"
+      },
+      "on-dark-active": {
+        "$value": "{color.yellow.500}",
+        "$type": "color"
+      },
+      "on-dark-secondary": {
+        "$value": "{color.slate.300}",
+        "$type": "color"
+      }
+    },
+    "bg": {
+      "page": {
+        "$value": "{color.neutral.100}",
+        "$type": "color"
+      },
+      "surface": {
+        "$value": "{color.neutral.0}",
+        "$type": "color"
+      },
+      "surface-subtle": {
+        "$value": "{color.neutral.50}",
+        "$type": "color"
+      },
+      "inverse": {
+        "$value": "{color.slate.700}",
+        "$type": "color"
+      },
+      "dashboard": {
+        "$value": "{color.slate.900}",
+        "$type": "color"
+      },
+      "inverse-hover": {
+        "$value": "{color.slate.650}",
+        "$type": "color"
+      },
+      "inverse-selected": {
+        "$value": "{color.slate.600}",
+        "$type": "color"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.neutral.300}",
+        "$type": "color"
+      }
+    },
+    "status": {
+      "success": {
+        "$value": "{color.green.500}",
+        "$type": "color"
+      },
+      "success-subtle": {
+        "$value": "{color.green.100}",
+        "$type": "color"
+      },
+      "danger": {
+        "$value": "{color.red.600}",
+        "$type": "color"
+      },
+      "info": {
+        "$value": "{color.blue.600}",
+        "$type": "color"
+      },
+      "online": {
+        "$value": "{color.yellow.500}",
+        "$type": "color",
+        "$description": "已决定：在线用黄，必须配圆点+文字“在线”"
+      },
+      "offline": {
+        "$value": "{color.neutral.600}",
+        "$type": "color"
+      },
+      "danger-on-dark": {
+        "$value": "{color.red.400}",
+        "$type": "color"
+      }
+    },
+    "risk": {
+      "high": {
+        "$value": "{color.red.600}",
+        "$type": "color",
+        "$description": "已决定：红，配实心圆形感叹号图标+文字"
+      },
+      "medium": {
+        "$value": "{color.yellow.500}",
+        "$type": "color",
+        "$description": "已决定：黄，配三角警示图标+文字"
+      },
+      "low": {
+        "$value": "{color.neutral.600}",
+        "$type": "color",
+        "$description": "已决定：灰，配信息图标+文字"
+      },
+      "low-on-dark": {
+        "$value": "{color.slate.300}",
+        "$type": "color"
+      }
+    },
+    "dataviz": {
+      "1": {
+        "$value": "{color.cyan.500}",
+        "$type": "color"
+      },
+      "1-subtle": {
+        "$value": "{color.cyan.100}",
+        "$type": "color"
+      },
+      "2": {
+        "$value": "{color.yellow.500}",
+        "$type": "color"
+      },
+      "2-subtle": {
+        "$value": "{color.yellow.200}",
+        "$type": "color"
+      },
+      "neutral": {
+        "$value": "{color.neutral.600}",
+        "$type": "color"
+      },
+      "neutral-subtle": {
+        "$value": "{color.neutral.400}",
+        "$type": "color"
+      }
+    }
+  },
+  "component": {
+    "button": {
+      "primary": {
+        "bg": {
+          "$value": "{semantic.brand.primary}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{semantic.brand.on-primary}",
+          "$type": "color"
+        }
+      },
+      "danger": {
+        "bg": {
+          "$value": "{semantic.status.danger}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{semantic.text.on-dark}",
+          "$type": "color"
+        }
+      },
+      "default": {
+        "bg": {
+          "$value": "{semantic.bg.surface}",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{semantic.border.default}",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{semantic.text.primary}",
+          "$type": "color"
+        }
+      },
+      "radius": {
+        "$value": "{radius.sm}",
+        "$type": "dimension"
+      },
+      "height-b": {
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        },
+        "$type": "dimension",
+        "$description": "Web 实测约 30px，建议取 32"
+      }
+    },
+    "nav": {
+      "top-bg": {
+        "$value": "{semantic.bg.inverse}",
+        "$type": "color"
+      },
+      "active-text": {
+        "$value": "{semantic.text.on-dark-active}",
+        "$type": "color"
+      },
+      "side-bg": {
+        "$value": "{semantic.bg.inverse}",
+        "$type": "color"
+      },
+      "side-active-bg": {
+        "$value": "{semantic.bg.inverse-selected}",
+        "$type": "color"
+      },
+      "side-hover-bg": {
+        "$value": "{semantic.bg.inverse-hover}",
+        "$type": "color"
+      },
+      "side-active-indicator": {
+        "$value": "{semantic.brand.primary}",
+        "$type": "color",
+        "$description": "选中项左侧 3px 竖条"
+      }
+    },
+    "table": {
+      "row-height-b": {
+        "$value": {
+          "value": 44,
+          "unit": "px"
+        },
+        "$type": "dimension",
+        "$description": "实测约 43px"
+      },
+      "divider": {
+        "$value": "{semantic.border.default}",
+        "$type": "color"
+      },
+      "header-text": {
+        "$value": "{semantic.text.secondary}",
+        "$type": "color"
+      }
+    },
+    "tabbar": {
+      "bg": {
+        "$value": "{semantic.bg.inverse}",
+        "$type": "color"
+      },
+      "active": {
+        "$value": "{semantic.brand.primary}",
+        "$type": "color"
+      },
+      "inactive": {
+        "$value": "{color.slate.400}",
+        "$type": "color"
+      }
+    },
+    "tag": {
+      "radius": {
+        "$value": "{radius.xs}",
+        "$type": "dimension"
+      }
+    }
+  },
+  "radius": {
+    "xs": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "sm": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$description": "Web 按钮实测约 3px"
+    },
+    "md": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      },
+      "$type": "dimension",
+      "$description": "小程序卡片实测 6–8px"
+    },
+    "lg": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "full": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    }
+  },
+  "space": {
+    "1": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "2": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "3": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "4": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "5": {
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "6": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "8": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    }
+  },
+  "font": {
+    "family": {
+      "$value": "PingFang SC",
+      "$type": "fontFamily",
+      "$description": "截图推断，待确认；Figma 导入只支持单个字体名"
+    },
+    "size": {
+      "xs": {
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$type": "dimension"
+      },
+      "sm": {
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        },
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$type": "dimension"
+      },
+      "xl": {
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        },
+        "$type": "dimension"
+      },
+      "2xl": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$type": "dimension"
+      },
+      "3xl": {
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$type": "dimension"
+      }
+    }
+  }
+}

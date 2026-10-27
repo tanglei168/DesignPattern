@@ -1,3 +1,4 @@
+import { effectStyles } from "@/lib/styles/effects";
 import { buildTokens } from "@/lib/styles/tokens";
 import type { DesignToken, StyleSeed } from "@/lib/styles/types";
 
@@ -20,12 +21,16 @@ export function toCss(seed: StyleSeed): string {
 
   for (const tier of ["primitive", "semantic", "component"] as const) {
     lines.push(`/* ========== ${TIER_TITLE[tier]} ========== */`);
-    lines.push(":root {");
+    lines.push(":root, .style-scope {");
     lines.push(renderGroup(tokens[tier]));
     lines.push("}");
     lines.push("");
   }
 
+  const effects = effectStyles(seed);
+  lines.push(`.style-scope { background-color: var(--bg-canvas); background-image: ${effects.backgroundImage}; background-size: ${effects.backgroundSize}; background-position: center; }`);
+  if (seed.id === 'shigan-b') lines.push('.style-scope[data-platform="mobile"] { --size-control-base: 44px; --color-background: var(--shigan-mobile-page); }');
+  lines.push('@media (prefers-reduced-motion: reduce) { :root, .style-scope { --duration-fast: 0ms; --duration-base: 0ms; } }');
   return lines.join("\n");
 }
 
@@ -42,3 +47,4 @@ function renderGroup(tokens: DesignToken[]): string {
   }
   return lines.join("\n");
 }
+

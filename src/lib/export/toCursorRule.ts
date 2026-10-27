@@ -69,7 +69,7 @@ ${seed.platformNotes.mobile}
 
 ## 无障碍
 
-正文对比 ${formatRatio(textContrast)}（${wcagLevel(textContrast)}），主按钮对比 ${formatRatio(buttonContrast)}（${wcagLevel(buttonContrast)}）。不够时换语义 token 或加大字号，不要新写色值。状态同时用文字或图标。\`prefers-reduced-motion\` 时把时长 token 视为 0ms。
+正文对比 ${formatRatio(textContrast)}（${wcagLevel(textContrast)}），主按钮对比 ${formatRatio(buttonContrast)}（${wcagLevel(buttonContrast)}）。不够时调整语义配色；低于 3:1 不能靠放大字号达标，大字 AA 要求至少 3:1 且 24 CSS px 或粗体约 18.67 CSS px。状态同时用文字或图标。\`prefers-reduced-motion\` 时把时长 token 视为 0ms。
 `;
 }
 
@@ -92,3 +92,4 @@ function formatRatio(ratio: number | null): string {
   if (ratio === null) return "无法计算";
   return `${ratio.toFixed(2)}:1`;
 }
+

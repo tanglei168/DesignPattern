@@ -342,3 +342,12 @@
   color: var(--fg-muted);
   font-size: var(--text-caption);
 }
+
+/* Attachment-specific platform density; never shrink mobile hit targets. */
+.style-scope[data-style="shigan-b"].ds-mobile {
+  --size-control-base: 44px;
+  --color-background: var(--shigan-mobile-page);
+}
+@media (prefers-reduced-motion: reduce) {
+  .style-scope { --duration-fast: 0ms; --duration-base: 0ms; }
+}

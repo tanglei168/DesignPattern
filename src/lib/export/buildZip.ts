@@ -1,3 +1,4 @@
+import { shiganSource } from "@/lib/styles/shigan";
 import JSZip from "jszip";
 import { renderExportContent } from "@/lib/export/files";
 import { toAgentsSnippet } from "@/lib/export/toCursorRule";
@@ -15,5 +16,7 @@ export async function buildZip(seed: StyleSeed): Promise<Blob> {
   zip.file("design/DESIGN.md", renderExportContent(seed, "DESIGN.md"));
   zip.file(".cursor/rules/design-style.mdc", renderExportContent(seed, "design-style.mdc"));
   zip.file("AGENTS.snippet.md", toAgentsSnippet(seed));
+  if (seed.id === "shigan-b") zip.file("design/source-tokens.json", JSON.stringify(shiganSource, null, 2));
   return zip.generateAsync({ type: "blob" });
 }
+

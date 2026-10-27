@@ -1,3 +1,4 @@
+import { applyShigan } from "@/lib/styles/shigan";
 import { contrastRatio, hoverColor, mixColors, readableOn, withAlpha } from "@/lib/color";
 import type { DesignToken, StyleSeed, TokenSet, TokenTier, TokenType } from "@/lib/styles/types";
 
@@ -21,6 +22,7 @@ const TIER_RANK: Record<TokenTier, number> = {
 
 export function buildTokens(seed: StyleSeed): TokenSet {
   const drafts = [...primitives(seed), ...semantics(seed), ...components()];
+  if (seed.id === "shigan-b") applyShigan(drafts);
   const byVar = new Map(drafts.map((token) => [token.cssVar, token]));
   const all: DesignToken[] = drafts.map((token) => {
     if (token.ref) {
@@ -116,6 +118,7 @@ function primitives(seed: StyleSeed): Draft[] {
     color("primary-hover", "--color-primary-hover", hover, "主行动色的悬停态，由主色混合黑或白得到。"),
     color("secondary", "--color-secondary", colors.secondary, "次按钮和弱强调表面。"),
     color("accent", "--color-accent", colors.accent, "点缀色，用于徽章和少量高亮。"),
+    color("on-secondary", "--color-on-secondary", readableOn(colors.secondary, colors.background), "次行动表面上的可读文字。"),
     color("on-accent", "--color-on-accent", onAccent, "在点缀色上对比合格的文字色。"),
     color("success", "--color-success", colors.success, "成功状态。"),
     color("warning", "--color-warning", colors.warning, "警告状态。"),
@@ -169,6 +172,7 @@ function semantics(seed: StyleSeed): Draft[] {
     color("fg-primary", "--fg-primary", "--color-foreground", "主要文字。"),
     color("fg-muted", "--fg-muted", "--color-muted", "次要文字。"),
     color("fg-on-primary", "--fg-on-primary", "--color-primary-foreground", "主色上的文字。"),
+    color("fg-on-secondary", "--fg-on-secondary", "--color-on-secondary", "次行动表面上的文字。"),
     color("fg-on-accent", "--fg-on-accent", "--color-on-accent", "点缀色上的文字。"),
     color("border-default", "--border-default", "--color-border", "默认边界。", "border-color"),
     action("action-primary", "--action-primary", "--color-primary", "主行动填充。"),
@@ -247,7 +251,7 @@ function components(): Draft[] {
     button("shadow", "--button-shadow", "--shadow-subtle", "shadow", "按钮阴影。", "box-shadow"),
     button("border-width", "--button-border-width", "--border-width-control", "dimension", "按钮描边粗细。", "border-width"),
     button("secondary-bg", "--button-secondary-bg", "--action-secondary", "color", "次按钮填充。", "background-color"),
-    button("secondary-fg", "--button-secondary-fg", "--fg-primary", "color", "次按钮文字。", "color"),
+    button("secondary-fg", "--button-secondary-fg", "--fg-on-secondary", "color", "次按钮文字。", "color"),
     button("secondary-border", "--button-secondary-border", "--border-default", "color", "次按钮描边。", "border-color"),
     button("disabled-bg", "--button-disabled-bg", "--state-disabled", "color", "禁用按钮填充。", "background-color"),
     button("disabled-fg", "--button-disabled-fg", "--state-disabled-fg", "color", "禁用按钮文字。", "color"),
@@ -484,6 +488,8 @@ function semanticSpacing(density: StyleSeed["density"]): {
 }
 
 function controlSize(seed: StyleSeed): string {
+  if (seed.id === "material-3") return "48px";
+  if (seed.id === "ibm-carbon") return "32px";
   const base = seed.density === "compact" ? 40 : seed.density === "spacious" ? 48 : 44;
   const sized = seed.platforms.includes("mobile") ? Math.max(44, base) : base;
   return `${sized}px`;
@@ -492,3 +498,4 @@ function controlSize(seed: StyleSeed): string {
 function round(value: number): number {
   return Math.round(value * 100) / 100;
 }
+

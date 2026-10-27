@@ -81,7 +81,7 @@ export const themeSeeds: StyleSeed[] = [
     keywords: ["catppuccin", "mocha", "粉彩暗色", "latte", "编辑器主题"],
     principles: [
       "使用官方的分层表面：base、surface0、overlay。",
-      "强调色柔和，薰衣草紫是主行动，粉色只做点缀。",
+      "强调色柔和，淡紫 mauve 是主行动，粉色只做点缀。",
       "文字用浅奶色，次要文字用 overlay 色而不是更暗的灰。",
       "圆角中等，整体触感柔软但不卡通。",
     ],
@@ -99,7 +99,7 @@ export const themeSeeds: StyleSeed[] = [
     ],
     useCases: ["笔记和知识库", "开发者设置", "长时间使用的暗色应用"],
     platformNotes: {
-      web: "内容宽度舒适，卡片间距宽松一点。链接用薰衣草色，访问过的链接不要变成刺眼的紫。",
+      web: "内容宽度舒适，卡片间距宽松一点。链接用淡紫 mauve 色，访问过的链接不要变成刺眼的紫。",
       mobile: "表面层级在小屏上更重要。列表用 surface，分组标题用 subtext。底部栏与页面背景分开一档。",
     },
     colors: {
@@ -405,3 +405,4 @@ export const themeSeeds: StyleSeed[] = [
     density: "comfortable",
   },
 ];
+

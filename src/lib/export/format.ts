@@ -1,12 +1,21 @@
+import { parseColor } from "@/lib/color";
 import type { DesignToken, TokenType } from "@/lib/styles/types";
 
 export function cssValue(token: DesignToken): string {
   return token.value;
 }
 
-export function dtcgValue(token: DesignToken): unknown {
+export function dtcgValue(token: DesignToken, baseSize = 16): unknown {
   if (token.alias) return token.alias;
   switch (token.type) {
+    case "color": return dtcgColor(token.value);
+    case "dimension": return dtcgDimension(token.value, baseSize);
+    case "duration": {
+      const match = token.value.match(/^([\d.]+)(ms|s)$/);
+      if (!match) throw new Error(`Invalid duration: ${token.value}`);
+      return { value: Number(match[1]), unit: match[2] };
+    }
+    case "fontFamily": return splitTopLevel(token.value.replace(/var\(--font-geist-sans,\s*"Geist"\)/g, '"Geist"').replace(/var\(--font-geist-mono,\s*"Geist Mono"\)/g, '"Geist Mono"')).map(name => name.trim().replace(/^['"]|['"]$/g, ""));
     case "fontWeight":
     case "number":
       return Number(token.value);
@@ -28,21 +37,21 @@ export function parseCubicBezier(value: string): number[] {
 }
 
 type ShadowLayer = {
-  color: string;
-  offsetX: string;
-  offsetY: string;
-  blur: string;
-  spread: string;
+  color: ReturnType<typeof dtcgColor>;
+  offsetX: ReturnType<typeof dtcgDimension>;
+  offsetY: ReturnType<typeof dtcgDimension>;
+  blur: ReturnType<typeof dtcgDimension>;
+  spread: ReturnType<typeof dtcgDimension>;
   inset?: boolean;
 };
 
 export function parseShadow(value: string): ShadowLayer | ShadowLayer[] {
   if (value.trim() === "none") {
-    return { color: "#00000000", offsetX: "0px", offsetY: "0px", blur: "0px", spread: "0px" };
+    return { color: dtcgColor("#00000000"), offsetX: dtcgDimension("0px"), offsetY: dtcgDimension("0px"), blur: dtcgDimension("0px"), spread: dtcgDimension("0px") };
   }
   const layers = splitTopLevel(value).map(parseShadowLayer);
   if (layers.some((layer) => layer === null)) {
-    return { color: "#00000000", offsetX: "0px", offsetY: "0px", blur: "0px", spread: "0px" };
+    throw new Error(`Unsupported shadow: ${value}`);
   }
   const parsed = layers as ShadowLayer[];
   return parsed.length === 1 ? parsed[0] : parsed;
@@ -58,11 +67,11 @@ function parseShadowLayer(layer: string): ShadowLayer | null {
   if (!match) return null;
   return {
     inset: inset || undefined,
-    offsetX: normalizeLength(match[1]),
-    offsetY: normalizeLength(match[2]),
-    blur: normalizeLength(match[3]),
-    spread: normalizeLength(match[4] ?? "0px"),
-    color: match[5].trim(),
+    offsetX: dtcgDimension(normalizeLength(match[1])),
+    offsetY: dtcgDimension(normalizeLength(match[2])),
+    blur: dtcgDimension(normalizeLength(match[3])),
+    spread: dtcgDimension(normalizeLength(match[4] ?? "0px")),
+    color: dtcgColor(match[5].trim()),
   };
 }
 
@@ -113,4 +122,19 @@ export function isTokenType(value: string): value is TokenType {
     value === "cubicBezier" ||
     value === "number"
   );
+}
+
+
+export function dtcgColor(value: string) {
+  const c = parseColor(value);
+  if (!c) throw new Error(`Unsupported color: ${value}`);
+  return { colorSpace: "srgb", components: [c.r / 255, c.g / 255, c.b / 255], alpha: c.a };
+}
+
+export function dtcgDimension(value: string, baseSize = 16) {
+  if (value === "0") return { value: 0, unit: "px" };
+  const match = value.match(/^(-?[\d.]+)(px|rem|em)$/);
+  if (!match) throw new Error(`Unsupported dimension: ${value}`);
+  // DTCG accepts px/rem; preserve original relative CSS in extensions.
+  return { value: Number(match[1]) * (match[2] === "em" ? baseSize : 1), unit: match[2] === "em" ? "px" : match[2] };
 }

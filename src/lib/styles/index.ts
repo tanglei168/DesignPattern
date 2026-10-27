@@ -1,3 +1,4 @@
+import { shiganSeed } from "@/lib/styles/seeds/shigan";
 import { CATEGORIES, getCategory } from "@/lib/styles/categories";
 import { artSeeds } from "@/lib/styles/seeds/art";
 import { eraSeeds } from "@/lib/styles/seeds/era";
@@ -13,6 +14,7 @@ export const STYLES: StyleSeed[] = [
   ...artSeeds,
   ...eraSeeds,
   ...themeSeeds,
+  shiganSeed,
 ];
 
 const byId = new Map(STYLES.map((style) => [style.id, style]));
@@ -86,3 +88,4 @@ export { CATEGORIES, getCategory };
 export type { Category } from "@/lib/styles/categories";
 export type { DesignToken, StyleSeed, TokenSet, TokenTier, TokenType } from "@/lib/styles/types";
 export { buildTokens, contrastPair, resolvedValue } from "@/lib/styles/tokens";
+
