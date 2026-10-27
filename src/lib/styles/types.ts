@@ -1,6 +1,6 @@
 export type Platform = "web" | "mobile";
 
-export type CategoryId = "platform" | "visual" | "art" | "era" | "theme";
+export type CategoryId = "platform" | "visual" | "art" | "era" | "theme" | "product";
 
 export type Density = "compact" | "comfortable" | "spacious";
 
@@ -104,3 +104,4 @@ export type TokenSet = {
   all: DesignToken[];
   vars: Record<string, string>;
 };
+
