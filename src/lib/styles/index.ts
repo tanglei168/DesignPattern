@@ -4,12 +4,14 @@ import { CATEGORIES, getCategory } from "@/lib/styles/categories";
 import { artSeeds } from "@/lib/styles/seeds/art";
 import { eraSeeds } from "@/lib/styles/seeds/era";
 import { platformSeeds } from "@/lib/styles/seeds/platform";
+import { promaxSeeds } from "@/lib/styles/seeds/promax";
 import { themeSeeds } from "@/lib/styles/seeds/theme";
 import { visualSeeds } from "@/lib/styles/seeds/visual";
 import { buildTokens } from "@/lib/styles/tokens";
 import type { CategoryId, Platform, StyleSeed } from "@/lib/styles/types";
 
 export const STYLES: StyleSeed[] = [
+  ...promaxSeeds,
   ...platformSeeds,
   ...visualSeeds,
   ...artSeeds,

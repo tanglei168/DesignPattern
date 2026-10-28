@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "node --import ./scripts/register.mjs --test scripts/audit.test.mjs",
-    "audit": "node --import ./scripts/register.mjs scripts/audit-report.mjs"
+    "audit": "node --import ./scripts/register.mjs scripts/audit-report.mjs",
+    "generate:promax": "node --import ./scripts/register.mjs scripts/generate-promax.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

@@ -66,7 +66,10 @@ test('regressions: shadows, dimensions, contrast, platform sizing',()=>{
   assert.throws(()=>parseShadow('unsupported'));
   assert.equal(valueOf(getStyle('material-3'),'--size-control'),'48px');
   assert.equal(valueOf(getStyle('ibm-carbon'),'--size-control'),'32px');
-  assert.equal(STYLES.length,41);
+  assert.equal(STYLES.length, 120); // 41 local + 79 UI UX Pro Max
+  assert.equal(STYLES.filter((seed) => seed.category === 'promax').length, 79);
+  assert(getStyle('pm-glassmorphism'));
+  assert(getStyle('pm-minimalism-and-swiss-style'));
 });
 
 test('scenario, appearance and platform filters intersect without losing design type', () => {

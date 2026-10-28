@@ -6,9 +6,10 @@
 
 ## 功能
 
-- **41 种风格**：产品设计（实干家 B 端）、平台设计系统、视觉风格、艺术流派、时代潮流、主题配色。
+- **120 种风格**：其中 **79** 个来自 [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)（可预览、可导出），其余为本地平台 / 视觉 / 艺术 / 时代 / 主题与实干家 B 端。
+- **Pro Max 产品推荐** `/recommend`：按 192 种产品类型交叉推荐风格、配色板与字体配对，并跳转画廊详情。
 - **交叉筛选**：产品场景（20 类）× Web / 移动端 × 浅色 / 深色预览 × 设计类型 × 标签 / 关键词。地址栏会记住筛选参数，链接可直接分享。
-- **规范库** `/references`：Apple Design Skill 目录索引，以及 UI UX Pro Max 的风格 / UX / App 规则检索。
+- **规范库** `/references`：Apple Design Skill 目录索引，以及 UI UX Pro Max 原文规则；风格目录可一键打开对应画廊预览。
 - **详情页**：原则、要做与不要做、Web 与移动端说明、实时预览、色板与对比度、字体阶梯、圆角阴影、组件试样、可搜索 token 表，以及详细规范（目标、组成参数、两端差异、状态、禁止事项、验收方法）。
 - **导出**：CSS / DTCG JSON / Tailwind v4 `@theme` / `DESIGN.md` / `SPECIFICATION.md` / Cursor 规则 / ZIP 设计包。
 - **快捷键**：`⌘K` / `Ctrl+K` 打开命令面板，跳到任意风格。

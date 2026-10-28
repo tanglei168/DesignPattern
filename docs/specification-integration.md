@@ -22,10 +22,11 @@
 - https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
 - 检索时版本：`28b3b8dee8c976df4fa3e94aed4e092ad43fcb03`；日期 2026-10-27。
 - MIT，保留 `src/lib/styles/sources/ui-ux-pro-max/LICENSE`。
-- 导入 `styles.csv`、`ux-guidelines.csv`、`app-interface.csv` 原始数据；`catalog.json` 为这三份CSV的展示投影。
-- 79个非废弃风格（50 active、29 supplemental）；119条UX规则+32条App规则=151条。
-- 仓库覆盖 Web、移动与桌面；本次只接入上述数据，不声称已运行其推荐引擎、导入全部技术栈或实现79套组件。
-- 原文规则存在范围差异甚至冲突，例如简略尺寸、滚动动效和减少动态效果。参考库保留原文；用于项目时以目标平台、辅助功能偏好、正式标准及用户需求作裁决，不能原样机械套用。
+- 导入 `styles.csv`、`ux-guidelines.csv`、`app-interface.csv`、`colors.csv`、`typography.csv`、`products.csv`、`ui-reasoning.csv`；`catalog.json` / `recommend.json` / `promax.generated.json` 为投影。
+- **79 个非废弃风格已映射为画廊可预览条目**（id 前缀 `pm-`，分类「UI UX Pro Max」），可导出 token / DESIGN.md。
+- `/recommend` 按 192 种产品类型交叉推荐风格、配色与字体配对（基于 products/colors/typography，不是完整上游 CLI 推荐引擎）。
+- 119 条 UX 规则 + 32 条 App 规则仍在 `/references` 原文检索；各技术栈 CSV 尚未逐栈接入。
+- 映射色板与阴影来自上游文字描述/色板启发式，不等同官方组件库像素复刻；落地前仍需平台与无障碍验收。
 
 ## 项目自己的决策
 

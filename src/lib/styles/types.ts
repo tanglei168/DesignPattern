@@ -1,6 +1,6 @@
 export type Platform = "web" | "mobile";
 
-export type CategoryId = "platform" | "visual" | "art" | "era" | "theme" | "product";
+export type CategoryId = "platform" | "visual" | "art" | "era" | "theme" | "product" | "promax";
 
 export type Density = "compact" | "comfortable" | "spacious";
 

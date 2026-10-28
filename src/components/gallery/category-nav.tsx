@@ -2,7 +2,7 @@
 
 import { CATEGORIES, type Category } from "@/lib/styles/categories";
 import { cn } from "@/lib/utils";
-import { BrushIcon, ClockIcon, LayersIcon, PaletteIcon, SwatchBookIcon, type LucideIcon } from "lucide-react";
+import { BrushIcon, ClockIcon, LayersIcon, PaletteIcon, SparklesIcon, SwatchBookIcon, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
 const ICONS: Record<Category["icon"], LucideIcon> = {
@@ -11,6 +11,7 @@ const ICONS: Record<Category["icon"], LucideIcon> = {
   brush: BrushIcon,
   history: ClockIcon,
   swatch: SwatchBookIcon,
+  sparkles: SparklesIcon,
 };
 
 export function CategoryNav({
