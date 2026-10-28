@@ -1,5 +1,7 @@
 "use client";
 
+import { SpecificationPanel } from "@/components/style-detail/specification-panel";
+import { EnterpriseComponents } from "@/components/preview/enterprise-components";
 import { MobileMockup } from "@/components/preview/mobile-mockup";
 import { StyleScope } from "@/components/preview/style-scope";
 import { WebMockup } from "@/components/preview/web-mockup";
@@ -9,8 +11,9 @@ import { SiteHeader } from "@/components/site-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { contrastRatio, wcagLevel } from "@/lib/color";
+import { contrastRatio, wcagLevel, opaqueColor } from "@/lib/color";
 import { getCategory } from "@/lib/styles/categories";
+import { buildTokens, resolvedValue } from "@/lib/styles/tokens";
 import type { StyleSeed } from "@/lib/styles/types";
 import { cn } from "@/lib/utils";
 import { ArrowLeftIcon, ArrowRightIcon, CheckIcon, XIcon } from "lucide-react";
@@ -21,6 +24,7 @@ import { toast } from "sonner";
 
 const SECTIONS = [
   { id: "overview", label: "概览" },
+  { id: "specification", label: "详细规范" },
   { id: "preview", label: "预览" },
   { id: "color", label: "色彩" },
   { id: "type", label: "字体" },
@@ -62,12 +66,16 @@ export function StyleDetail({
   const [active, setActive] = useState<string>(SECTIONS[0].id);
   const textContrast = contrastRatio(seed.colors.foreground, seed.colors.background);
   const buttonContrast = contrastRatio(seed.colors.primaryForeground, seed.colors.primary);
+  const tokens = buildTokens(seed);
+  const secondaryToken = tokens.all.find(token => token.cssVar === "--button-secondary-fg")!;
+  const secondaryContrast = contrastRatio(resolvedValue(secondaryToken, tokens.vars), opaqueColor(seed.colors.secondary, seed.colors.background));
+  const mutedContrast = contrastRatio(seed.colors.muted, opaqueColor(seed.colors.surface, seed.colors.background));
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
       if (!target) return;
-      if (target.closest("input, textarea, select, [contenteditable=true], [data-slot=dialog-content]")) return;
+      if (event.defaultPrevented || target.closest("input, textarea, select, button, [role=tab], [role=slider], [role=menu], [contenteditable=true], [data-slot=dialog-content]")) return;
       if (event.metaKey || event.ctrlKey || event.altKey) return;
       if (event.key === "ArrowLeft") router.push(`/styles/${prev.id}`);
       if (event.key === "ArrowRight") router.push(`/styles/${next.id}`);
@@ -202,9 +210,15 @@ export function StyleDetail({
             </div>
           </section>
 
+          <section id="specification" className="scroll-mt-32">
+            <SectionTitle title="详细设计规范" kicker="Specification" />
+            <SpecificationPanel key={seed.id} seed={seed} />
+          </section>
+
           <section id="preview" className="scroll-mt-32">
             <SectionTitle title="预览" kicker="Preview" />
-            <PreviewPlatformTabs seed={seed} />
+            <p className="mb-4 text-sm text-muted-foreground">这是风格启发的组件试样，不是官方组件库或完整产品复刻。艺术流派与布局风格的构图特征未完整实现；色彩对比检测也不等于整页无障碍认证。</p>
+            <PreviewPlatformTabs key={seed.id} seed={seed} />
           </section>
 
           <section id="color" className="scroll-mt-32">
@@ -212,6 +226,8 @@ export function StyleDetail({
             <div className="mb-4 flex flex-wrap gap-2">
               <ContrastBadge label="文字 / 画布" ratio={textContrast} />
               <ContrastBadge label="主按钮文字 / 主色" ratio={buttonContrast} />
+              <ContrastBadge label="次按钮文字 / 次色" ratio={secondaryContrast} />
+              <ContrastBadge label="弱文字 / 表面（静态估算）" ratio={mutedContrast} />
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
               {COLOR_FIELDS.map((field) => {
@@ -323,6 +339,7 @@ export function StyleDetail({
 
           <section id="components" className="scroll-mt-32">
             <SectionTitle title="组件" kicker="Components" />
+            {seed.id === "shigan-b" ? <EnterpriseComponents seed={seed} /> : (
             <StyleScope seed={seed} className="rounded-xl border">
               <div style={{ display: "grid", gap: "var(--space-stack)", padding: "var(--space-container)" }}>
                 <div className="flex flex-wrap" style={{ gap: "var(--space-inline)" }}>
@@ -347,6 +364,7 @@ export function StyleDetail({
                 </div>
               </div>
             </StyleScope>
+            )}
           </section>
 
           <section id="tokens" className="scroll-mt-32">
@@ -365,13 +383,13 @@ export function StyleDetail({
 }
 
 function PreviewPlatformTabs({ seed }: { seed: StyleSeed }) {
-  const [platform, setPlatform] = useState<"web" | "mobile">("web");
+  const [platform, setPlatform] = useState<"web" | "mobile">(seed.platforms[0]);
 
   return (
     <Tabs value={platform} onValueChange={(value) => setPlatform(value === "mobile" ? "mobile" : "web")}>
       <TabsList>
-        <TabsTrigger value="web">Web</TabsTrigger>
-        <TabsTrigger value="mobile">移动端</TabsTrigger>
+        <TabsTrigger value="web">{seed.platforms.includes("web") ? "Web" : "Web 延伸示意"}</TabsTrigger>
+        <TabsTrigger value="mobile">{seed.platforms.includes("mobile") ? "移动端" : "移动端延伸示意"}</TabsTrigger>
       </TabsList>
       <TabsContent value="web" className="pt-4">
         <WebMockup seed={seed} />
@@ -411,3 +429,4 @@ function ContrastBadge({ label, ratio }: { label: string; ratio: number | null }
     </Badge>
   );
 }
+

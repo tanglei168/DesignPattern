@@ -1,5 +1,6 @@
 "use client";
 
+import { INDUSTRIES } from "@/lib/styles/discovery";
 import { CategoryNav } from "@/components/gallery/category-nav";
 import { StyleCard } from "@/components/gallery/style-card";
 import { SiteHeader } from "@/components/site-header";
@@ -22,6 +23,8 @@ import { useState, useTransition } from "react";
 type PlatformFilter = "" | Platform;
 
 type GalleryQuery = {
+  industry: string;
+  mode: string;
   q: string;
   cat: string;
   platform: PlatformFilter;
@@ -29,7 +32,7 @@ type GalleryQuery = {
 };
 
 const PLATFORM_OPTIONS: { value: PlatformFilter; label: string }[] = [
-  { value: "", label: "全部" },
+  { value: "", label: "全部平台" },
   { value: "web", label: "Web" },
   { value: "mobile", label: "移动端" },
 ];
@@ -37,6 +40,8 @@ const PLATFORM_OPTIONS: { value: PlatformFilter; label: string }[] = [
 function readQuery(searchParams: URLSearchParams): GalleryQuery {
   const platform = searchParams.get("platform");
   return {
+    industry: searchParams.get("industry") ?? "",
+    mode: ["light", "dark"].includes(searchParams.get("mode") ?? "") ? searchParams.get("mode")! : "",
     q: searchParams.get("q") ?? "",
     cat: searchParams.get("cat") ?? "",
     platform: platform === "web" || platform === "mobile" ? platform : "",
@@ -56,6 +61,8 @@ export function Gallery() {
   const [draft, setDraft] = useState(urlQuery);
   const [urlSnapshot, setUrlSnapshot] = useState(urlQuery);
   if (
+    urlQuery.industry !== urlSnapshot.industry ||
+    urlQuery.mode !== urlSnapshot.mode ||
     urlQuery.q !== urlSnapshot.q ||
     urlQuery.cat !== urlSnapshot.cat ||
     urlQuery.platform !== urlSnapshot.platform ||
@@ -65,12 +72,14 @@ export function Gallery() {
     setDraft(urlQuery);
   }
 
-  const { q, cat, platform, tag } = draft;
+  const { q, cat, platform, tag, industry, mode } = draft;
 
   function patch(partial: Partial<GalleryQuery>) {
     const next = { ...draft, ...partial };
     setDraft(next);
     const params = new URLSearchParams();
+    if (next.industry) params.set("industry", next.industry);
+    if (next.mode) params.set("mode", next.mode);
     if (next.q) params.set("q", next.q);
     if (next.cat) params.set("cat", next.cat);
     if (next.platform) params.set("platform", next.platform);
@@ -81,14 +90,14 @@ export function Gallery() {
     });
   }
 
-  const query = { q, cat, platform, tag };
-  const counted = filterStyles(STYLES, { q, platform, tag });
+  const query = { q, cat, platform, tag, industry, mode };
+  const counted = filterStyles(STYLES, { q, platform, tag, industry, mode });
   const visible = filterStyles(STYLES, query);
   const counts = Object.fromEntries(
     CATEGORIES.map((category) => [category.id, counted.filter((style) => style.category === category.id).length]),
   );
-  const tags = collectTags(filterStyles(STYLES, { q, cat, platform }));
-  const grouped = !q && !platform && !tag;
+  const tags = collectTags(filterStyles(STYLES, { q, cat, platform, industry, mode }));
+  const grouped = !q && !tag;
   const sections = grouped
     ? CATEGORIES.filter((category) => !cat || category.id === cat)
         .map((category) => ({
@@ -106,7 +115,7 @@ export function Gallery() {
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
         <SheetContent side="left" className="w-72 p-0">
           <SheetHeader className="border-b">
-            <SheetTitle>分类</SheetTitle>
+            <SheetTitle>设计类型</SheetTitle>
             <SheetDescription>按设计范式浏览</SheetDescription>
           </SheetHeader>
           <CategoryNav
@@ -130,12 +139,16 @@ export function Gallery() {
           />
         </aside>
         <main id="main" className="min-w-0 flex-1">
-          <div className="sticky top-14 z-30 border-b bg-background/90 px-4 py-3 backdrop-blur">
-            <div className="flex flex-col gap-3">
+          <div className="border-b bg-background/90 px-4 py-4">
+            <div className="flex flex-col gap-4">
+              <fieldset><legend className="mb-2 text-sm font-medium">产品场景 <span className="font-normal text-muted-foreground">Category</span></legend><div className="flex flex-wrap gap-2">
+                {[["", "全部场景"], ...INDUSTRIES].map(([id, label]) => <button key={id} type="button" aria-pressed={industry === id} onClick={() => patch({ industry: id, tag: "" })} className={`rounded-full border px-3 py-1.5 text-sm focus-visible:ring-2 focus-visible:ring-ring ${industry === id ? "bg-foreground text-background" : "hover:bg-muted"}`}>{label}</button>)}
+              </div></fieldset>
+              <div className="flex flex-wrap items-center gap-3 text-sm"><span className="font-medium">明暗模式</span>{[["", "全部模式"], ["light", "浅色"], ["dark", "深色"]].map(([id, label]) => <button type="button" key={id} aria-pressed={mode === id} onClick={() => patch({ mode: id })} className={`rounded-md border px-3 py-1.5 ${mode === id ? "bg-foreground text-background" : "hover:bg-muted"}`}>{label}</button>)}<span className="text-xs text-muted-foreground">按预览外观筛选，与网站主题开关独立。</span></div>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <div
                   role="group"
-                  aria-label="平台"
+                  aria-label="适用平台"
                   className="inline-flex w-fit rounded-lg border p-0.5"
                 >
                   {PLATFORM_OPTIONS.map((option) => {
@@ -192,6 +205,7 @@ export function Gallery() {
             </div>
           </div>
           <div className="px-4 py-6">
+            <p className="mb-4 text-xs leading-5 text-muted-foreground">产品场景是编辑推荐标签，不代表行业认证；平台表示适用方向，不代表全部交互已实现。设计类型可在分类栏进一步筛选。</p>
             {activeCategory ? (
               <p className="mb-4 max-w-3xl text-sm text-muted-foreground">{activeCategory.description}</p>
             ) : null}
@@ -205,7 +219,7 @@ export function Gallery() {
               <div className="flex flex-col items-start gap-3 rounded-xl border border-dashed px-6 py-16">
                 <h2 className="text-lg font-medium">没有匹配的风格</h2>
                 <p className="text-sm text-muted-foreground">试试更短的关键词，或清除平台和标签筛选。</p>
-                <Button type="button" variant="outline" onClick={() => patch({ q: "", cat: "", platform: "", tag: "" })}>
+                <Button type="button" variant="outline" onClick={() => patch({ q: "", cat: "", platform: "", tag: "", industry: "", mode: "" })}>
                   清除筛选
                 </Button>
               </div>
@@ -251,3 +265,4 @@ function StyleGrid({
     </div>
   );
 }
+

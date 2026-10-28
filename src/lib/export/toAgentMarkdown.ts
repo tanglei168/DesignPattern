@@ -1,3 +1,4 @@
+import { specificationMarkdown } from "@/lib/styles/specification";
 import { markdownCell, tokenTable } from "@/lib/export/format";
 import { contrastRatio, wcagLevel } from "@/lib/color";
 import { getCategory } from "@/lib/styles/categories";
@@ -27,6 +28,8 @@ export function toAgentMarkdown(seed: StyleSeed): string {
   return `# ${seed.name} · ${seed.nameEn}
 
 ${seed.summary}
+
+> 本套件是画廊的风格启发实现，不是官方设计系统。预览不保证复现完整布局、原生交互或所有无障碍要求。
 
 | | |
 | --- | --- |
@@ -64,6 +67,8 @@ ${seed.donts.map((item) => `- ${item}`).join("\n")}
 
 ${seed.useCases.map((item) => `- ${item}`).join("\n")}
 
+${specificationMarkdown(seed).replace(/^(#{1,3}) /gm, "$1# ")}
+
 ## Token
 
 当前值只是这份种子的解析结果，写代码时仍然引用变量名。
@@ -87,7 +92,7 @@ ${tokenTable(tokens.component)}
 - 主按钮：背景 \`var(--button-bg)\`（当前 ${inline(valueOf("--button-bg"))}），文字 \`var(--button-fg)\`，圆角 \`var(--button-radius)\`，描边 \`var(--button-border-width)\` solid \`var(--button-border)\`，阴影 \`var(--button-shadow)\`，内边距 \`var(--button-padding-y)\` \`var(--button-padding-x)\`，字号 \`var(--button-size)\`，字重 \`var(--button-weight)\`，字体 \`var(--button-font)\`。
 - 悬停或按下时，背景切换为 \`var(--button-bg-hover)\`。移动端用按下态，不要只做悬停。
 - 次按钮：\`var(--button-secondary-bg)\`、\`var(--button-secondary-fg)\`、\`var(--button-secondary-border)\`。
-- 禁用：\`var(--button-disabled-bg)\`、\`var(--button-disabled-fg)\`，移除指针并设置 \`aria-disabled\`。
+- 禁用：\`var(--button-disabled-bg)\`、\`var(--button-disabled-fg)\`，原生控件设置 \`disabled\`；自定义控件除 \`aria-disabled\` 外还必须阻止激活行为。
 
 ### 输入框
 
@@ -137,7 +142,7 @@ ${seed.platformNotes.web}
 
 ${seed.platformNotes.mobile}
 
-- 可点击目标不小于 \`var(--size-control)\`（当前 ${valueOf("--size-control")}；只要风格包含移动端，这个值至少是 44px）。
+- 可点击目标不小于 \`var(--size-control)\`（当前 ${valueOf("--size-control")}；实干家桌面为 32px，移动端需使用 .style-scope[data-platform="mobile"] 覆盖为 44px；Material 3 为 48px。这些是 CSS 预览尺寸，原生端应按 pt/dp 适配）。
 - 使用底部标签栏，而不是把桌面侧栏原样缩小。
 - 固定在底部的按钮和标签栏要加上 \`padding-bottom: env(safe-area-inset-bottom)\`。
 - 标题避开刘海：顶部留出 \`env(safe-area-inset-top)\`。
@@ -147,7 +152,7 @@ ${seed.platformNotes.mobile}
 
 - 正文色在画布上的对比度为 ${formatRatio(textContrast)}（${wcagLabel(textContrast)}）。
 - 主按钮文字在主按钮填充上的对比度为 ${formatRatio(buttonContrast)}（${wcagLabel(buttonContrast)}）。
-- 低于 AA（正文 4.5:1，大字号 3:1）时，不要另写一个色值来“修好”。改用对比更高的语义 token，或把该处字号升到 \`var(--text-title)\` 以上并加粗。
+- 低于 AA（正文 4.5:1，大字号 3:1）时，不要另写一个色值来“修好”。改用对比更高的语义 token；只有对比达到 3:1 且文字至少 24 CSS px（或粗体至少约 18.67 CSS px）才满足大字 AA，低于 3:1 不能靠放大修复。
 - 状态不能只靠颜色。成功、警告、危险同时使用文字或图标。
 - 尊重 \`prefers-reduced-motion\`：把 \`var(--duration-interaction)\` 和 \`var(--duration-panel)\` 降为 \`0ms\`。
 
@@ -158,7 +163,8 @@ ${seed.platformNotes.mobile}
 3. 在 \`AGENTS.md\` 加入 \`AGENTS.snippet.md\` 的说明，或把 \`.cursor/rules/design-style.mdc\` 放到 \`.cursor/rules/\`，并保持 \`alwaysApply: true\`。
 4. 下游设计或编码代理开始改 UI 之前，先读 \`design/DESIGN.md\`，再按组件配方使用 token。
 5. 若项目使用 Tailwind v4，在 \`tokens.css\` 之后引入 \`tailwind.theme.css\`，使用 \`bg-ds-canvas\`、\`text-ds-fg\`、\`rounded-ds-control\` 这类 \`ds-\` 工具类。不要让 Tailwind 主题变量覆盖 \`--color-*\` 或 \`--font-body\` 这些 token 名。
-6. \`tokens.json\` 是 W3C Design Tokens Community Group 格式，\`$value\` 里的 \`{color.primitive.background}\` 这种别名指向原始 token。阴影保留了 CSS 原文在 \`$extensions\` 中，方便多阴影、硬偏移和霓虹光晕原样落地。
+6. 容器添加 \`style-scope\` 类以应用导出的渐变与纹理；字体文件仍需由使用方加载。实干家移动容器还需 \`data-platform="mobile"\`。
+7. \`tokens.json\` 使用 DTCG 2025.10 值结构（社区规范，不是 W3C Recommendation），\`$value\` 里的 \`{color.primitive.background}\` 这种别名指向原始 token。阴影保留了 CSS 原文在 \`$extensions\` 中，方便多阴影、硬偏移和霓虹光晕原样落地。
 `;
 }
 
@@ -185,3 +191,4 @@ function wcagLabel(ratio: number | null): string {
   if (level === "AA Large") return "仅达到大字号 AA";
   return `达到 ${level}`;
 }
+

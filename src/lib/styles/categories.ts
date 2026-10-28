@@ -5,10 +5,18 @@ export type Category = {
   name: string;
   nameEn: string;
   description: string;
-  icon: "layers" | "palette" | "brush" | "history" | "swatch";
+  icon: "layers" | "palette" | "brush" | "history" | "swatch" | "sparkles";
 };
 
 export const CATEGORIES: Category[] = [
+  {
+    id: "promax",
+    name: "UI UX Pro Max",
+    nameEn: "UI UX Pro Max",
+    description: "从 nextlevelbuilder/ui-ux-pro-max-skill 映射的可预览风格；含产品推荐、配色与字体配对。",
+    icon: "sparkles",
+  },
+  { id: "product", name: "产品设计风格", nameEn: "Product Design", description: "围绕业务场景定义布局、信息密度、组件与视觉规范。", icon: "layers" },
   {
     id: "platform",
     name: "平台设计系统",
@@ -53,3 +61,4 @@ export function getCategory(id: CategoryId): Category {
   }
   return category;
 }
+

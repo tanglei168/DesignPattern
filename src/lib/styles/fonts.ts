@@ -17,8 +17,8 @@ export const FONTS = {
   bebas: '"Bebas Neue", "Noto Sans SC", sans-serif',
   serifSc: '"Noto Serif SC", "Playfair Display", Georgia, serif',
   sansSc: '"Noto Sans SC", "Inter", system-ui, sans-serif',
-  geist: 'var(--font-geist-sans), "Inter", "Noto Sans SC", system-ui, sans-serif',
-  geistMono: 'var(--font-geist-mono), "JetBrains Mono", ui-monospace, monospace',
+  geist: 'var(--font-geist-sans, "Geist"), "Inter", "Noto Sans SC", system-ui, sans-serif',
+  geistMono: 'var(--font-geist-mono, "Geist Mono"), "JetBrains Mono", ui-monospace, monospace',
 } as const;
 
 export const MOTION = {
@@ -48,3 +48,4 @@ export const MOTION = {
     easing: "cubic-bezier(0, 0, 1, 1)",
   },
 } as const;
+

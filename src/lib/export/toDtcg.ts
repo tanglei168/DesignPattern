@@ -1,3 +1,4 @@
+import { shiganSource } from "@/lib/styles/shigan";
 import { dtcgValue } from "@/lib/export/format";
 import { buildTokens } from "@/lib/styles/tokens";
 import type { StyleSeed } from "@/lib/styles/types";
@@ -10,7 +11,11 @@ export function toDtcg(seed: StyleSeed): string {
         id: seed.id,
         name: seed.name,
         nameEn: seed.nameEn,
-        version: "1.0.0",
+        version: "1.1.0",
+        format: "DTCG 2025.10",
+        effects: seed.effects,
+        sourceTokens: seed.id === "shigan-b" ? shiganSource : undefined,
+        relativeDimensions: "em values converted using seed baseSize; original CSS retained per token",
         category: seed.category,
         platforms: seed.platforms,
       },
@@ -34,11 +39,11 @@ export function toDtcg(seed: StyleSeed): string {
         tier: token.tier,
       },
     };
-    if (token.type === "shadow" && !token.alias) {
+    if (!token.alias) {
       (extensions["com.design-style-gallery"] as Record<string, unknown>).css = token.value;
     }
     node[leaf] = {
-      $value: dtcgValue(token),
+      $value: dtcgValue(token, seed.typography.baseSize),
       $type: token.type,
       $description: token.description,
       $extensions: extensions,
@@ -47,3 +52,4 @@ export function toDtcg(seed: StyleSeed): string {
 
   return `${JSON.stringify(root, null, 2)}\n`;
 }
+

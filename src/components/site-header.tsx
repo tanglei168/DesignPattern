@@ -37,6 +37,15 @@ export function SiteHeader({ onMenu }: { onMenu?: () => void }) {
           {STYLES.length} 种风格
         </span>
         <div className="ml-auto flex items-center gap-2">
+          <Link href="/recommend" className="shrink-0 rounded-md px-2 py-2 text-sm hover:bg-muted">
+            Pro Max 推荐
+          </Link>
+          <Link href="/?cat=promax" className="hidden shrink-0 rounded-md px-2 py-2 text-sm hover:bg-muted sm:inline">
+            Pro Max 风格
+          </Link>
+          <Link href="/references" className="shrink-0 rounded-md px-2 py-2 text-sm hover:bg-muted">
+            规范库
+          </Link>
           <Button type="button" variant="outline" onClick={open} aria-label="搜索风格">
             <SearchIcon />
             <span className="hidden sm:inline">搜索风格</span>
@@ -48,3 +57,4 @@ export function SiteHeader({ onMenu }: { onMenu?: () => void }) {
     </header>
   );
 }
+

@@ -1,3 +1,4 @@
+import { industriesForStyle, previewAppearance } from "@/lib/styles/discovery";
 import { styleApiLinks } from "@/lib/export/files";
 import { STYLES } from "@/lib/styles";
 
@@ -10,6 +11,8 @@ export function GET() {
       nameEn: style.nameEn,
       category: style.category,
       platforms: style.platforms,
+      industries: industriesForStyle(style.id),
+      previewAppearance: previewAppearance(style),
       tags: style.tags,
       summary: style.summary,
       page: `/styles/${style.id}`,
@@ -17,3 +20,4 @@ export function GET() {
     })),
   });
 }
+

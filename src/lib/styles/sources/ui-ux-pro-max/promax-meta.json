@@ -1,0 +1,792 @@
+{
+  "pm-minimalism-and-swiss-style": {
+    "styleId": "minimalism-and-swiss-style",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimal Swiss",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-neumorphism": {
+    "styleId": "neumorphism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Neumorphism Mobile (Plus Jakarta Sans + System)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-glassmorphism": {
+    "styleId": "glassmorphism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Geometric Modern",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-brutalism": {
+    "styleId": "brutalism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimalist Monochrome Editorial",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-3d-and-hyperrealism": {
+    "styleId": "3d-and-hyperrealism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Real Estate Luxury",
+    "preferredMode": "auto",
+    "lightMode": "conditional",
+    "darkMode": "conditional"
+  },
+  "pm-vibrant-and-block-based": {
+    "styleId": "vibrant-and-block-based",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Bauhaus Geometric",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-dark-mode-oled": {
+    "styleId": "dark-mode-oled",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimalist Monochrome Editorial",
+    "preferredMode": "auto",
+    "lightMode": "not-recommended",
+    "darkMode": "supported"
+  },
+  "pm-accessible-and-ethical": {
+    "styleId": "accessible-and-ethical",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Accessibility First",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-claymorphism": {
+    "styleId": "claymorphism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Claymorphism Mobile (Nunito + DM Sans)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-aurora-ui": {
+    "styleId": "aurora-ui",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Classic Elegant",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-retro-futurism": {
+    "styleId": "retro-futurism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Terminal CLI Monospace",
+    "preferredMode": "dark",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-flat-design": {
+    "styleId": "flat-design",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Flat Design Mobile (System Bold)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-skeuomorphism": {
+    "styleId": "skeuomorphism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Real Estate Luxury",
+    "preferredMode": "auto",
+    "lightMode": "conditional",
+    "darkMode": "conditional"
+  },
+  "pm-liquid-glass": {
+    "styleId": "liquid-glass",
+    "status": "active",
+    "type": "Platform/Material",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Neumorphism Mobile (Plus Jakarta Sans + System)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-motion-driven": {
+    "styleId": "motion-driven",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Gaming Bold",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-micro-interactions": {
+    "styleId": "micro-interactions",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Bauhaus Geometric",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-inclusive-design": {
+    "styleId": "inclusive-design",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Accessibility First",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-zero-interface": {
+    "styleId": "zero-interface",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Neumorphism Mobile (Plus Jakarta Sans + System)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-soft-ui-evolution": {
+    "styleId": "soft-ui-evolution",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Neumorphism Mobile (Plus Jakarta Sans + System)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-data-dense-dashboard": {
+    "styleId": "data-dense-dashboard",
+    "status": "active",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Dashboard Data",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-heat-map-and-heatmap-style": {
+    "styleId": "heat-map-and-heatmap-style",
+    "status": "supplemental",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Dashboard Data",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-executive-dashboard": {
+    "styleId": "executive-dashboard",
+    "status": "supplemental",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimal Swiss",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-real-time-monitoring": {
+    "styleId": "real-time-monitoring",
+    "status": "supplemental",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Dashboard Data",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-drill-down-analytics": {
+    "styleId": "drill-down-analytics",
+    "status": "supplemental",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Dashboard Data",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-comparative-analysis-dashboard": {
+    "styleId": "comparative-analysis-dashboard",
+    "status": "supplemental",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Luxury Serif",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-predictive-analytics": {
+    "styleId": "predictive-analytics",
+    "status": "supplemental",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Dashboard Data",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-user-behavior-analytics": {
+    "styleId": "user-behavior-analytics",
+    "status": "supplemental",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Dashboard Data",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-financial-dashboard": {
+    "styleId": "financial-dashboard",
+    "status": "supplemental",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Dashboard Data",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-sales-intelligence-dashboard": {
+    "styleId": "sales-intelligence-dashboard",
+    "status": "supplemental",
+    "type": "BI/Analytics",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimal Swiss",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-neubrutalism": {
+    "styleId": "neubrutalism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimalist Monochrome Editorial",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-bento-box-grid": {
+    "styleId": "bento-box-grid",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimal Swiss",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-y2k-aesthetic": {
+    "styleId": "y2k-aesthetic",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Crypto/Web3",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-cyberpunk-ui": {
+    "styleId": "cyberpunk-ui",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Cyberpunk Mobile (Orbitron + JetBrains Mono)",
+    "preferredMode": "auto",
+    "lightMode": "not-recommended",
+    "darkMode": "supported"
+  },
+  "pm-organic-biophilic": {
+    "styleId": "organic-biophilic",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Wellness Calm",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-ai-native-ui": {
+    "styleId": "ai-native-ui",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimal Swiss",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-memphis-design": {
+    "styleId": "memphis-design",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Bauhaus Geometric",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-vaporwave": {
+    "styleId": "vaporwave",
+    "status": "supplemental",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Pixel Retro",
+    "preferredMode": "dark",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-dimensional-layering": {
+    "styleId": "dimensional-layering",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Spatial Clear",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-exaggerated-minimalism": {
+    "styleId": "exaggerated-minimalism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Neo Brutalism Mobile (Space Grotesk Bold)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-kinetic-typography": {
+    "styleId": "kinetic-typography",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Kinetic Brutalism (Space Grotesk)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-parallax-storytelling": {
+    "styleId": "parallax-storytelling",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimal Swiss",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-swiss-modernism-2-0": {
+    "styleId": "swiss-modernism-2-0",
+    "status": "supplemental",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Neumorphism Mobile (Plus Jakarta Sans + System)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-hud-sci-fi-fui": {
+    "styleId": "hud-sci-fi-fui",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Tech/HUD Mono",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-pixel-art": {
+    "styleId": "pixel-art",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Pixel Retro",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-spatial-ui-visionos": {
+    "styleId": "spatial-ui-visionos",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Spatial Clear",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-e-ink-paper": {
+    "styleId": "e-ink-paper",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimalist Monochrome Editorial",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "not-recommended"
+  },
+  "pm-gen-z-chaos-maximalism": {
+    "styleId": "gen-z-chaos-maximalism",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Neo Brutalism Mobile (Space Grotesk Bold)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-biomimetic-organic-2-0": {
+    "styleId": "biomimetic-organic-2-0",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Wellness Calm",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-anti-polish-raw-aesthetic": {
+    "styleId": "anti-polish-raw-aesthetic",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Sketch Hand-Drawn Mobile (Kalam + Patrick Hand)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-tactile-digital-deformable-ui": {
+    "styleId": "tactile-digital-deformable-ui",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Claymorphism Mobile (Nunito + DM Sans)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-nature-distilled": {
+    "styleId": "nature-distilled",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Indie/Craft",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-interactive-cursor-design": {
+    "styleId": "interactive-cursor-design",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Gaming Bold",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-voice-first-multimodal": {
+    "styleId": "voice-first-multimodal",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimal Swiss",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-3d-product-preview": {
+    "styleId": "3d-product-preview",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "E-commerce Clean",
+    "preferredMode": "auto",
+    "lightMode": "conditional",
+    "darkMode": "conditional"
+  },
+  "pm-gradient-mesh-aurora-evolved": {
+    "styleId": "gradient-mesh-aurora-evolved",
+    "status": "supplemental",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimal Swiss",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-editorial-grid-magazine": {
+    "styleId": "editorial-grid-magazine",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Magazine Style",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-chromatic-aberration-rgb-split": {
+    "styleId": "chromatic-aberration-rgb-split",
+    "status": "supplemental",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Terminal CLI Monospace",
+    "preferredMode": "dark",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-vintage-analog-retro-film": {
+    "styleId": "vintage-analog-retro-film",
+    "status": "active",
+    "type": "General",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Retro Vintage",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-bauhaus": {
+    "styleId": "bauhaus",
+    "status": "active",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Bauhaus Geometric",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-minimalist-monochrome": {
+    "styleId": "minimalist-monochrome",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimalist Monochrome Editorial",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-modern-dark-cinema-mobile": {
+    "styleId": "modern-dark-cinema-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Premium Sans (DM Sans)",
+    "preferredMode": "dark",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-saas-mobile-high-tech-boutique": {
+    "styleId": "saas-mobile-high-tech-boutique",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "SaaS Mobile Boutique (Calistoga + Inter)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-terminal-cli-mobile": {
+    "styleId": "terminal-cli-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Terminal CLI Monospace",
+    "preferredMode": "dark",
+    "lightMode": "not-recommended",
+    "darkMode": "supported"
+  },
+  "pm-kinetic-brutalism-mobile": {
+    "styleId": "kinetic-brutalism-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Kinetic Brutalism (Space Grotesk)",
+    "preferredMode": "dark",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-flat-design-mobile-touch-first": {
+    "styleId": "flat-design-mobile-touch-first",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Flat Design Mobile (System Bold)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-material-you-md3-mobile": {
+    "styleId": "material-you-md3-mobile",
+    "status": "active",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Material You MD3 (Roboto System)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-neo-brutalism-mobile": {
+    "styleId": "neo-brutalism-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Neo Brutalism Mobile (Space Grotesk Bold)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "not-recommended"
+  },
+  "pm-bold-typography-mobile-poster": {
+    "styleId": "bold-typography-mobile-poster",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Bold Typography Mobile (Inter Poster)",
+    "preferredMode": "dark",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-academia-scholarly-mobile": {
+    "styleId": "academia-scholarly-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Academia Mobile (Cormorant + Crimson + Cinzel)",
+    "preferredMode": "dark",
+    "lightMode": "supported",
+    "darkMode": "conditional"
+  },
+  "pm-cyberpunk-mobile-hud": {
+    "styleId": "cyberpunk-mobile-hud",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Cyberpunk Mobile (Orbitron + JetBrains Mono)",
+    "preferredMode": "dark",
+    "lightMode": "not-recommended",
+    "darkMode": "supported"
+  },
+  "pm-bitcoin-defi-mobile": {
+    "styleId": "bitcoin-defi-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Web3 Bitcoin DeFi (Space Grotesk + Inter + Mono)",
+    "preferredMode": "dark",
+    "lightMode": "not-recommended",
+    "darkMode": "supported"
+  },
+  "pm-claymorphism-mobile": {
+    "styleId": "claymorphism-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Claymorphism Mobile (Nunito + DM Sans)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-enterprise-saas-mobile": {
+    "styleId": "enterprise-saas-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Enterprise SaaS Mobile (Plus Jakarta Sans)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-sketch-hand-drawn-mobile": {
+    "styleId": "sketch-hand-drawn-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Sketch Hand-Drawn Mobile (Kalam + Patrick Hand)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-neumorphism-mobile": {
+    "styleId": "neumorphism-mobile",
+    "status": "supplemental",
+    "type": "Mobile",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Neumorphism Mobile (Plus Jakarta Sans + System)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "not-recommended"
+  },
+  "pm-fluent-2": {
+    "styleId": "fluent-2",
+    "status": "active",
+    "type": "Platform/System",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Material You MD3 (Roboto System)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-shopify-polaris": {
+    "styleId": "shopify-polaris",
+    "status": "active",
+    "type": "Platform/System",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Minimal Swiss",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-spectrum-design-system": {
+    "styleId": "spectrum-design-system",
+    "status": "active",
+    "type": "Platform/System",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Material You MD3 (Roboto System)",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  },
+  "pm-spectrum-2": {
+    "styleId": "spectrum-2",
+    "status": "supplemental",
+    "type": "Platform/System",
+    "source": "ui-ux-pro-max",
+    "fontPairing": "Playful Creative",
+    "preferredMode": "auto",
+    "lightMode": "supported",
+    "darkMode": "supported"
+  }
+}

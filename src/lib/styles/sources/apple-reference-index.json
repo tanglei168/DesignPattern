@@ -1,0 +1,746 @@
+{
+  "repository": "https://github.com/dickwu/apple-design-skill",
+  "revision": "914b6a377c22755597e4405e54911b996de822d7",
+  "retrieved": "2026-10-27",
+  "coverage": "123 篇上游目录索引；不代表已逐篇复核或实现。",
+  "entries": [
+    {
+      "title": "Design principles",
+      "file": "design-principles.md",
+      "group": "Getting started",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Designing for iOS",
+      "file": "designing-for-ios.md",
+      "group": "Getting started",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Designing for iPadOS",
+      "file": "designing-for-ipados.md",
+      "group": "Getting started",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Designing for macOS",
+      "file": "designing-for-macos.md",
+      "group": "Getting started",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Designing for games",
+      "file": "designing-for-games.md",
+      "group": "Getting started",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Designing for iPhone Duo",
+      "file": "designing-for-iphone-duo.md",
+      "group": "Getting started",
+      "upstreamUpdated": "2026-09-09"
+    },
+    {
+      "title": "Accessibility",
+      "file": "accessibility.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "App icons",
+      "file": "app-icons.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Branding",
+      "file": "branding.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2026-09-09"
+    },
+    {
+      "title": "Color",
+      "file": "color.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2025-12-16"
+    },
+    {
+      "title": "Dark Mode",
+      "file": "dark-mode.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2024-08-06"
+    },
+    {
+      "title": "Icons",
+      "file": "icons.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Images",
+      "file": "images.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2025-12-16"
+    },
+    {
+      "title": "Inclusion",
+      "file": "inclusion.md",
+      "group": "Foundations",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Layout",
+      "file": "layout.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2026-09-09"
+    },
+    {
+      "title": "Materials",
+      "file": "materials.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2025-09-09"
+    },
+    {
+      "title": "Motion",
+      "file": "motion.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2025-09-09"
+    },
+    {
+      "title": "Privacy",
+      "file": "privacy.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "Right to left",
+      "file": "right-to-left.md",
+      "group": "Foundations",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "SF Symbols",
+      "file": "sf-symbols.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2025-07-28"
+    },
+    {
+      "title": "Typography",
+      "file": "typography.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2025-12-16"
+    },
+    {
+      "title": "Writing",
+      "file": "writing.md",
+      "group": "Foundations",
+      "upstreamUpdated": "2025-12-16"
+    },
+    {
+      "title": "Charting data",
+      "file": "charting-data.md",
+      "group": "Patterns",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Collaboration and sharing",
+      "file": "collaboration-and-sharing.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2023-12-05"
+    },
+    {
+      "title": "Drag and drop",
+      "file": "drag-and-drop.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2023-10-24"
+    },
+    {
+      "title": "Entering data",
+      "file": "entering-data.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "Feedback",
+      "file": "feedback.md",
+      "group": "Patterns",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "File management",
+      "file": "file-management.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2024-06-10"
+    },
+    {
+      "title": "Going full screen",
+      "file": "going-full-screen.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Launching",
+      "file": "launching.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2024-06-10"
+    },
+    {
+      "title": "Live-viewing apps",
+      "file": "live-viewing-apps.md",
+      "group": "Patterns",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Loading",
+      "file": "loading.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Managing accounts",
+      "file": "managing-accounts.md",
+      "group": "Patterns",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Managing notifications",
+      "file": "managing-notifications.md",
+      "group": "Patterns",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Modality",
+      "file": "modality.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2023-12-05"
+    },
+    {
+      "title": "Multitasking",
+      "file": "multitasking.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Offering help",
+      "file": "offering-help.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2023-12-05"
+    },
+    {
+      "title": "Onboarding",
+      "file": "onboarding.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2024-06-10"
+    },
+    {
+      "title": "Playing audio",
+      "file": "playing-audio.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "Playing haptics",
+      "file": "playing-haptics.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2024-05-07"
+    },
+    {
+      "title": "Playing video",
+      "file": "playing-video.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2023-09-12"
+    },
+    {
+      "title": "Printing",
+      "file": "printing.md",
+      "group": "Patterns",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Ratings and reviews",
+      "file": "ratings-and-reviews.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2023-09-12"
+    },
+    {
+      "title": "Searching",
+      "file": "searching.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Settings",
+      "file": "settings.md",
+      "group": "Patterns",
+      "upstreamUpdated": "2024-06-10"
+    },
+    {
+      "title": "Undo and redo",
+      "file": "undo-and-redo.md",
+      "group": "Patterns",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Charts",
+      "file": "charts.md",
+      "group": "Components › Content",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Image views",
+      "file": "image-views.md",
+      "group": "Components › Content",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "Text views",
+      "file": "text-views.md",
+      "group": "Components › Content",
+      "upstreamUpdated": "2023-06-05"
+    },
+    {
+      "title": "Web views",
+      "file": "web-views.md",
+      "group": "Components › Content",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Boxes",
+      "file": "boxes.md",
+      "group": "Components › Layout and organization",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Collections",
+      "file": "collections.md",
+      "group": "Components › Layout and organization",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Column views",
+      "file": "column-views.md",
+      "group": "Components › Layout and organization",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Disclosure controls",
+      "file": "disclosure-controls.md",
+      "group": "Components › Layout and organization",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Labels",
+      "file": "labels.md",
+      "group": "Components › Layout and organization",
+      "upstreamUpdated": "2023-06-05"
+    },
+    {
+      "title": "Lists and tables",
+      "file": "lists-and-tables.md",
+      "group": "Components › Layout and organization",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "Outline views",
+      "file": "outline-views.md",
+      "group": "Components › Layout and organization",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Split views",
+      "file": "split-views.md",
+      "group": "Components › Layout and organization",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Tab views",
+      "file": "tab-views.md",
+      "group": "Components › Layout and organization",
+      "upstreamUpdated": "2023-06-05"
+    },
+    {
+      "title": "Activity views",
+      "file": "activity-views.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Buttons",
+      "file": "buttons.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "2025-12-16"
+    },
+    {
+      "title": "Context menus",
+      "file": "context-menus.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "2023-12-05"
+    },
+    {
+      "title": "Dock menus",
+      "file": "dock-menus.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Edit menus",
+      "file": "edit-menus.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "Home Screen quick actions",
+      "file": "home-screen-quick-actions.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Menus",
+      "file": "menus.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Pop-up buttons",
+      "file": "pop-up-buttons.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "2023-10-24"
+    },
+    {
+      "title": "Pull-down buttons",
+      "file": "pull-down-buttons.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "The menu bar",
+      "file": "the-menu-bar.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Toolbars",
+      "file": "toolbars.md",
+      "group": "Components › Menus and actions",
+      "upstreamUpdated": "2025-12-16"
+    },
+    {
+      "title": "Path controls",
+      "file": "path-controls.md",
+      "group": "Components › Navigation and search",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Search fields",
+      "file": "search-fields.md",
+      "group": "Components › Navigation and search",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Sidebars",
+      "file": "sidebars.md",
+      "group": "Components › Navigation and search",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Tab bars",
+      "file": "tab-bars.md",
+      "group": "Components › Navigation and search",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Token fields",
+      "file": "token-fields.md",
+      "group": "Components › Navigation and search",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Action sheets",
+      "file": "action-sheets.md",
+      "group": "Components › Presentation",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Alerts",
+      "file": "alerts.md",
+      "group": "Components › Presentation",
+      "upstreamUpdated": "2024-02-02"
+    },
+    {
+      "title": "Page controls",
+      "file": "page-controls.md",
+      "group": "Components › Presentation",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "Panels",
+      "file": "panels.md",
+      "group": "Components › Presentation",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Popovers",
+      "file": "popovers.md",
+      "group": "Components › Presentation",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Scroll views",
+      "file": "scroll-views.md",
+      "group": "Components › Presentation",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Sheets",
+      "file": "sheets.md",
+      "group": "Components › Presentation",
+      "upstreamUpdated": "2026-03-24"
+    },
+    {
+      "title": "Windows",
+      "file": "windows.md",
+      "group": "Components › Presentation",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Color wells",
+      "file": "color-wells.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Combo boxes",
+      "file": "combo-boxes.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Image wells",
+      "file": "image-wells.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Pickers",
+      "file": "pickers.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "2023-06-05"
+    },
+    {
+      "title": "Segmented controls",
+      "file": "segmented-controls.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "Sliders",
+      "file": "sliders.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "Steppers",
+      "file": "steppers.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Text fields",
+      "file": "text-fields.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "2023-06-05"
+    },
+    {
+      "title": "Toggles",
+      "file": "toggles.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "2024-03-29"
+    },
+    {
+      "title": "Virtual keyboards",
+      "file": "virtual-keyboards.md",
+      "group": "Components › Selection and input",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Gauges",
+      "file": "gauges.md",
+      "group": "Components › Status",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Progress indicators",
+      "file": "progress-indicators.md",
+      "group": "Components › Status",
+      "upstreamUpdated": "2023-09-12"
+    },
+    {
+      "title": "Rating indicators",
+      "file": "rating-indicators.md",
+      "group": "Components › Status",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "App Shortcuts",
+      "file": "app-shortcuts.md",
+      "group": "Components › System experiences",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Controls",
+      "file": "controls.md",
+      "group": "Components › System experiences",
+      "upstreamUpdated": "2024-06-10"
+    },
+    {
+      "title": "Live Activities",
+      "file": "live-activities.md",
+      "group": "Components › System experiences",
+      "upstreamUpdated": "2026-10-13"
+    },
+    {
+      "title": "Notifications",
+      "file": "notifications.md",
+      "group": "Components › System experiences",
+      "upstreamUpdated": "2023-10-24"
+    },
+    {
+      "title": "Snippets",
+      "file": "snippets.md",
+      "group": "Components › System experiences",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Status bars",
+      "file": "status-bars.md",
+      "group": "Components › System experiences",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Widgets",
+      "file": "widgets.md",
+      "group": "Components › System experiences",
+      "upstreamUpdated": "2026-10-13"
+    },
+    {
+      "title": "Apple Pencil and Scribble",
+      "file": "apple-pencil-and-scribble.md",
+      "group": "Inputs",
+      "upstreamUpdated": "2024-05-07"
+    },
+    {
+      "title": "Focus and selection",
+      "file": "focus-and-selection.md",
+      "group": "Inputs",
+      "upstreamUpdated": "2023-10-24"
+    },
+    {
+      "title": "Game controls",
+      "file": "game-controls.md",
+      "group": "Inputs",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Gestures",
+      "file": "gestures.md",
+      "group": "Inputs",
+      "upstreamUpdated": "2024-09-09"
+    },
+    {
+      "title": "Gyroscope and accelerometer",
+      "file": "gyro-and-accelerometer.md",
+      "group": "Inputs",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Keyboards",
+      "file": "keyboards.md",
+      "group": "Inputs",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Pointing devices",
+      "file": "pointing-devices.md",
+      "group": "Inputs",
+      "upstreamUpdated": "2023-06-21"
+    },
+    {
+      "title": "AirPlay",
+      "file": "airplay.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2023-05-02"
+    },
+    {
+      "title": "App Clips",
+      "file": "app-clips.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Apple In-App Purchase",
+      "file": "apple-in-app-purchase.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2026-09-17"
+    },
+    {
+      "title": "Apple Pay",
+      "file": "apple-pay.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Augmented reality",
+      "file": "augmented-reality.md",
+      "group": "Technologies",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Generative AI",
+      "file": "generative-ai.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "iCloud",
+      "file": "icloud.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2025-06-09"
+    },
+    {
+      "title": "Machine learning",
+      "file": "machine-learning.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "Maps",
+      "file": "maps.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2024-12-18"
+    },
+    {
+      "title": "NFC",
+      "file": "nfc.md",
+      "group": "Technologies",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Sign in with Apple",
+      "file": "sign-in-with-apple.md",
+      "group": "Technologies",
+      "upstreamUpdated": "-"
+    },
+    {
+      "title": "Siri",
+      "file": "siri.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2026-06-08"
+    },
+    {
+      "title": "VoiceOver",
+      "file": "voiceover.md",
+      "group": "Technologies",
+      "upstreamUpdated": "2025-03-07"
+    }
+  ]
+}

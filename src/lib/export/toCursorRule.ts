@@ -69,7 +69,7 @@ ${seed.platformNotes.mobile}
 
 ## 无障碍
 
-正文对比 ${formatRatio(textContrast)}（${wcagLevel(textContrast)}），主按钮对比 ${formatRatio(buttonContrast)}（${wcagLevel(buttonContrast)}）。不够时换语义 token 或加大字号，不要新写色值。状态同时用文字或图标。\`prefers-reduced-motion\` 时把时长 token 视为 0ms。
+正文对比 ${formatRatio(textContrast)}（${wcagLevel(textContrast)}），主按钮对比 ${formatRatio(buttonContrast)}（${wcagLevel(buttonContrast)}）。不够时调整语义配色；低于 3:1 不能靠放大字号达标，大字 AA 要求至少 3:1 且 24 CSS px 或粗体约 18.67 CSS px。状态同时用文字或图标。\`prefers-reduced-motion\` 时把时长 token 视为 0ms。
 `;
 }
 
@@ -80,6 +80,7 @@ export function toAgentsSnippet(seed: StyleSeed): string {
 
 本项目界面遵循「${seed.name}」（${seed.nameEn}）。
 
+- 详细规则、平台差异与验收方法见 \`design/SPECIFICATION.md\`，规则定义不代表已实现或已验收。
 - 改 UI 之前先阅读 \`design/DESIGN.md\`。
 - 全局引入 \`design/tokens.css\`。颜色、圆角、阴影、字号、字重和间距只能使用其中的 CSS 变量，禁止硬编码。
 - 遵守 DESIGN.md 的 MUST 与 MUST NOT。
@@ -92,3 +93,4 @@ function formatRatio(ratio: number | null): string {
   if (ratio === null) return "无法计算";
   return `${ratio.toFixed(2)}:1`;
 }
+

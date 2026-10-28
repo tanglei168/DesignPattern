@@ -2,7 +2,7 @@
 
 import { CATEGORIES, type Category } from "@/lib/styles/categories";
 import { cn } from "@/lib/utils";
-import { BrushIcon, ClockIcon, LayersIcon, PaletteIcon, SwatchBookIcon, type LucideIcon } from "lucide-react";
+import { BrushIcon, ClockIcon, LayersIcon, PaletteIcon, SparklesIcon, SwatchBookIcon, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
 const ICONS: Record<Category["icon"], LucideIcon> = {
@@ -11,6 +11,7 @@ const ICONS: Record<Category["icon"], LucideIcon> = {
   brush: BrushIcon,
   history: ClockIcon,
   swatch: SwatchBookIcon,
+  sparkles: SparklesIcon,
 };
 
 export function CategoryNav({
@@ -25,7 +26,8 @@ export function CategoryNav({
   onSelect: (category: string) => void;
 }) {
   return (
-    <nav aria-label="风格分类" className="flex flex-col gap-1 p-3">
+    <nav aria-label="设计类型" className="flex flex-col gap-1 p-3">
+      <p className="px-2.5 py-2 text-xs font-medium text-muted-foreground">设计类型 / Design Type</p>
       <CategoryButton active={active === ""} count={total} label="全部" labelEn="All" onClick={() => onSelect("")} />
       {CATEGORIES.map((category) => {
         const Icon = ICONS[category.icon];
@@ -81,3 +83,4 @@ function CategoryButton({
     </button>
   );
 }
+

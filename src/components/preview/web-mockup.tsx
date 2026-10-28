@@ -1,7 +1,9 @@
+import { ShiganPreview } from "@/components/preview/shigan-preview";
 import { StyleScope } from "@/components/preview/style-scope";
 import type { StyleSeed } from "@/lib/styles/types";
 
 export function WebMockup({ seed }: { seed: StyleSeed }) {
+  if (seed.id === "shigan-b") return <div className="overflow-hidden rounded-xl border"><ShiganPreview seed={seed} /></div>;
   return (
     <div className="overflow-hidden rounded-xl border bg-background shadow-sm">
       <div className="flex items-center gap-2 border-b px-3 py-2">
@@ -23,7 +25,7 @@ export function WebMockup({ seed }: { seed: StyleSeed }) {
             价格
           </span>
           <span className="ml-auto">
-            <button type="button" className="ds-btn ds-btn-primary" style={{ minHeight: "2.25rem" }}>
+            <button type="button" className="ds-btn ds-btn-primary">
               开始使用
             </button>
           </span>
@@ -70,3 +72,4 @@ export function WebMockup({ seed }: { seed: StyleSeed }) {
     </div>
   );
 }
+

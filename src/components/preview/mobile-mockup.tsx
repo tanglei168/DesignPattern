@@ -1,3 +1,4 @@
+import { ShiganPreview } from "@/components/preview/shigan-preview";
 import { StyleScope } from "@/components/preview/style-scope";
 import type { StyleSeed } from "@/lib/styles/types";
 
@@ -9,9 +10,10 @@ const TABS = [
 ];
 
 export function MobileMockup({ seed }: { seed: StyleSeed }) {
+  if (seed.id === "shigan-b") return <div className="mx-auto max-w-sm overflow-hidden rounded-xl border"><ShiganPreview seed={seed} mobile /></div>;
   return (
     <div className="mx-auto w-[280px] rounded-[2rem] border-[10px] border-zinc-900 bg-zinc-900 shadow-xl">
-      <StyleScope seed={seed} className="flex h-[540px] flex-col overflow-hidden rounded-[1.35rem]">
+      <StyleScope seed={seed} className="ds-mobile flex h-[540px] flex-col overflow-hidden rounded-[1.35rem]">
         <div
           className="flex items-center justify-between"
           style={{
@@ -35,7 +37,7 @@ export function MobileMockup({ seed }: { seed: StyleSeed }) {
           </label>
           <input id={`mobile-search-${seed.id}`} className="ds-input" placeholder="搜索" readOnly />
         </div>
-        <div className="min-h-0 flex-1 overflow-hidden" style={{ paddingInline: "var(--space-container)" }}>
+        <div className="min-h-0 flex-1 overflow-y-auto" style={{ paddingInline: "var(--space-container)" }}>
           <div style={{ borderRadius: "var(--list-radius)", overflow: "hidden", border: "var(--list-border-width) solid var(--list-divider)" }}>
             {[
               ["设计原则", "保持 token"],
@@ -82,3 +84,4 @@ export function MobileMockup({ seed }: { seed: StyleSeed }) {
     </div>
   );
 }
+

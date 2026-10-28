@@ -24,6 +24,7 @@ export function ExportPanel({ seed }: { seed: StyleSeed }) {
   const base = `${origin}/api/styles/${seed.id}`;
   const curls = [
     `curl -fsSL ${base}/DESIGN.md`,
+    `curl -fsSL ${base}/SPECIFICATION.md -o design/SPECIFICATION.md`,
     `curl -fsSL ${base}/tokens.css -o design/tokens.css`,
     `curl -fsSL ${base}/tokens.json -o design/tokens.json`,
     `curl -fsSL ${base}/tailwind.theme.css -o design/tailwind.theme.css`,
@@ -115,3 +116,4 @@ async function copy(text: string, success: string) {
     toast.error("复制失败");
   }
 }
+

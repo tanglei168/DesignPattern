@@ -1,3 +1,4 @@
+import { specificationMarkdown } from "@/lib/styles/specification";
 import { toCss } from "@/lib/export/toCss";
 import { toCursorRule } from "@/lib/export/toCursorRule";
 import { toDtcg } from "@/lib/export/toDtcg";
@@ -6,6 +7,7 @@ import { toTailwind } from "@/lib/export/toTailwind";
 import type { StyleSeed } from "@/lib/styles/types";
 
 export const EXPORT_FILES = [
+  { file: "SPECIFICATION.md", contentType: "text/markdown; charset=utf-8", label: "导出详细规范" },
   { file: "tokens.css", contentType: "text/css; charset=utf-8", label: "导出 CSS" },
   { file: "tokens.json", contentType: "application/json; charset=utf-8", label: "导出 DTCG" },
   {
@@ -39,6 +41,8 @@ export function renderExport(
 
 export function renderExportContent(seed: StyleSeed, file: ExportFileName): string {
   switch (file) {
+    case "SPECIFICATION.md":
+      return specificationMarkdown(seed);
     case "tokens.css":
       return toCss(seed);
     case "tokens.json":
@@ -54,6 +58,7 @@ export function renderExportContent(seed: StyleSeed, file: ExportFileName): stri
 
 export function styleApiLinks(id: string): Record<ExportFileName, string> {
   return {
+    "SPECIFICATION.md": `/api/styles/${id}/SPECIFICATION.md`,
     "tokens.css": `/api/styles/${id}/tokens.css`,
     "tokens.json": `/api/styles/${id}/tokens.json`,
     "tailwind.theme.css": `/api/styles/${id}/tailwind.theme.css`,
@@ -61,3 +66,4 @@ export function styleApiLinks(id: string): Record<ExportFileName, string> {
     "design-style.mdc": `/api/styles/${id}/design-style.mdc`,
   };
 }
+
